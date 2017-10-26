@@ -54,21 +54,25 @@
 						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
 					</p>
 				</section>
-				
+
 				<section data-markdown>
 					<textarea data-template>
 						## Page title
 						A paragraph with some text and a [link](http://hakim.se).
 					</textarea>
 				</section>
-				
+
 				<section>
-					\[ \begin{aligned}
-					\dot{x} = \sigma(y-x) \\
-					\dot{y} = \rho x - y - xz \\
-					\dot{z} = -\beta z + xy
-					\end{aligned} \]
-					
+					<h3>The Cauchy-Schwarz Inequality</h3>
+					<script type="math/tex; mode=display">
+						\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+					</script>
+				</section>
+
+				<section>
+					<h3>The probability of getting \(k\) heads when flipping \(n\) coins is</h3>
+
+					\[P(E)   = {n \choose k} p^k (1-p)^{ n-k} \]
 				</section>
 
 				<!-- Example of nested vertical slides -->
@@ -409,6 +413,11 @@ Reveal.addEventListener( 'customevent', function() {
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
+				math: {
+					// mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -416,7 +425,8 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: '/plugin/math/math.js', async: true }
 				]
 			});
 
