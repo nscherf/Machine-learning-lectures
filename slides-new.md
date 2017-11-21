@@ -95,8 +95,24 @@ Note: Today we need computerised methods for most problems
 
 ----
 
+<img src="img/learning-algorithm-scheme.png" height = 500 >
+
+----
+
 - Rules, Data  -> [Classical Programming] -> Answers <!-- .element: class="fragment" -->
 - Data, Answers -> [ML] -> Rules (programs, computational models) <!-- .element: class="fragment" -->
+
+----
+
+## Prerequisites
+
+- There is a pattern in the data
+- We cannot write down a mathematical model of it
+- There is (enough) data
+
+----
+
+## Awesome examples go here...
 
 ----
 
@@ -200,12 +216,6 @@ Note: - response variable real-valued
 	- what are problematic mistakes?
 	- e.g. regression: regular medium mistakes or rare large mistakes
 
-----
-
-## generalisation 
-
-- how is performance on **unseen data** ?
-- using a **test set** separate from training set
 
 ---
 
@@ -342,6 +352,16 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ## Some basic concepts
 
+
+----
+
+
+## The design matrix
+- features
+ - feature vectors
+ - feature extraction
+- classes/categories/groups
+
 ----
 
 ## parametric vs. Non-parametric models
@@ -387,6 +407,13 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ----
 
+## generalisation 
+
+- how is performance on **unseen data** ?
+- using a **test set** separate from training set
+
+----
+
 ## Overfitting
 
 - if we model every minute variation in the training data, we are likely to fit the noise as well
@@ -395,24 +422,43 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ----
 
-## model selection
+## model selection and the feasibility of learning
 
 - how to select a good model (e.g. the k in kNN)?
 	- misclassification rate on training set
-	- but: we care about generalisation error: misclassification rate on test set 
+	- but: we care about generalisation error: misclassification rate on test set
+	- out-of sample error 
 - U-shaped curve
+
+----
+
+## the test set
+
+- during training we don't have access to test set:
+	- split training data into training set and validation set
+		- e.g. 80/20
+	
+
+----
+
+## cross validation
+
+- cross validation (k folds) 
 
 ----
 
 ## model selection
 
-- during training we don't have access to test set:
-	- split training data into training set and validation set
-		- e.g. 80/20
-	- cross validation (k folds) 
-- some interesting concepts
-	- Occam's razor
-	- Rashomon and the multiplicity of good models
+- optimise over models (or hyperparameters)
+- use a validation set
+
+----
+
+## model selection 
+
+- training set
+- validation set
+- test set (don't touch!)
 
 ----
 
@@ -422,6 +468,10 @@ Large grant = $1,000,000 | large grant = $50,000
 - no free lunch theorem (Wolpert 1996)
 - no universally best model across all problems
 - assumptions that works well in one domain often fail in another
+
+----
+
+## The unreasonable effectiveness of data
 
 ---
 
