@@ -9,26 +9,19 @@ Before we start...
 
 1. Introduction: What is Machine Learning? 
 2. Mathematical Background 
-	1. Linear Algebra (from [2])
-	1. Probability theory (from [1], [2], [3]) 
-	2. Model selection
-	3. Curse of dimensionality
-	4. Decision theory
-	5. Information theory
-3. Machine Learning Basics (from [2])
-4. Introduction to Python, Jupyter, scikit-learn, pandas...
-5. Linear models for regression
-6. Linear models for classification 
-7. *GLMs and exponential family*
-8. Kernel methods and sparse kernel machines
-9. Mixture Models and EM
-10. Adaptive basis function models - Classification and Regression Trees (CART)
-11. *(Directed) Graphical Models*
-12. (Continuous) Latent Variables -  Dimensionality Reduction
-13. Clustering 
-14. *Nonparametric methods [6]*
-15. Neural networks
-16. *Introduction to Tensorflow / Keras*
+3. Python: Introduction to Python for Machine Learning
+4. Machine Learning Basics revisited
+5. Regression
+6. Classification 
+8. SVMs and Kernel methods
+9. Decision Trees
+10. Ensemble Learning (e.g. Random Forests)
+11. Dimensionality Reduction
+12. Clustering 
+13. Generative Models (e.g. Naive Bayes)
+14. (Graphical Models)
+15. Python: Introduction to Tensorflow / Keras
+17. Neural networks
 17. Deep learning
 
 ------------
