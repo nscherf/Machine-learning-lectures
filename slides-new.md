@@ -9,7 +9,7 @@ theme: black
 
 ---
 
-<!-- .slide: data-background="../img/robots.png" -->  
+<!-- .slide: data-background="img/robots.png" -->  
 ## An integral part of Artificial Intelligence
 
 
@@ -37,7 +37,7 @@ AI solved problems that are intellectually difficult for humans
 ----
 
 The true challenge: tasks that are easy for people to do but hard to describe formally 
-<img src="../img/faces.jpg" height = 500 >
+<img src="img/faces.jpg" height = 500 >
 
 ----
 
