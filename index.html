@@ -16,7 +16,7 @@
 
 # What is Machine Learning?
 </script></section><section ><section data-markdown><script type="text/template">
-<!-- .slide: data-background="../img/robots.png" -->  
+<!-- .slide: data-background="img/robots.png" -->  
 ## An integral part of Artificial Intelligence
 
 </script></section><section data-markdown><script type="text/template">
@@ -36,7 +36,7 @@ AI solved problems that are intellectually difficult for humans
 <img src="http://www.publicdomainpictures.net/pictures/200000/velka/chess-board-1473668683CKw.jpg" height = 500 >
 </script></section><section data-markdown><script type="text/template">
 The true challenge: tasks that are easy for people to do but hard to describe formally 
-<img src="../img/faces.jpg" height = 500 >
+<img src="img/faces.jpg" height = 500 >
 </script></section><section data-markdown><script type="text/template">
 ## Machine Learning and AI
 
@@ -90,8 +90,18 @@ The true challenge: tasks that are easy for people to do but hard to describe fo
 
 > ...a set of methods that can automatically detect patterns in data, and then *use the uncovered patterns to predict future data*, or to perform other kinds of decision making under uncertainty. -- Murphy 2012, Machine Learning
 </script></section><section data-markdown><script type="text/template">
+<img src="img/learning-algorithm-scheme.png" height = 500 >
+</script></section><section data-markdown><script type="text/template">
 - Rules, Data  -> [Classical Programming] -> Answers <!-- .element: class="fragment" -->
 - Data, Answers -> [ML] -> Rules (programs, computational models) <!-- .element: class="fragment" -->
+</script></section><section data-markdown><script type="text/template">
+## Prerequisites
+
+- There is a pattern in the data
+- We cannot write down a mathematical model of it
+- There is (enough) data
+</script></section><section data-markdown><script type="text/template">
+## Awesome examples go here...
 </script></section><section data-markdown><script type="text/template">
 ## Machine Learning: A Taxonomy
 
@@ -172,11 +182,7 @@ The drosophila of Machine Learning:
 - depends on application
 	- what are problematic mistakes?
 	- e.g. regression: regular medium mistakes or rare large mistakes
-</script></section><section data-markdown><script type="text/template">
-## generalisation 
 
-- how is performance on **unseen data** ?
-- using a **test set** separate from training set
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## The Experience, E
 
@@ -276,6 +282,14 @@ Large grant = $1,000,000 | large grant = $50,000
 - Breiman, Leo. 2001. “Statistical Modeling: The Two Cultures.” Statistical Science: A Review Journal of the Institute of Mathematical Statistics 16 (3) 199–231.
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Some basic concepts
+
+</script></section><section data-markdown><script type="text/template">
+
+## The design matrix
+- features
+ - feature vectors
+ - feature extraction
+- classes/categories/groups
 </script></section><section data-markdown><script type="text/template">
 ## parametric vs. Non-parametric models
 
@@ -308,28 +322,46 @@ Large grant = $1,000,000 | large grant = $50,000
 
 - logistic regression
 </script></section><section data-markdown><script type="text/template">
+## generalisation 
+
+- how is performance on **unseen data** ?
+- using a **test set** separate from training set
+</script></section><section data-markdown><script type="text/template">
 ## Overfitting
 
 - if we model every minute variation in the training data, we are likely to fit the noise as well
 - less accurate prediction for future data
 - perfect fit of training data = bad generalisation to unseen data
 </script></section><section data-markdown><script type="text/template">
-## model selection
+## model selection and the feasibility of learning
 
 - how to select a good model (e.g. the k in kNN)?
 	- misclassification rate on training set
-	- but: we care about generalisation error: misclassification rate on test set 
+	- but: we care about generalisation error: misclassification rate on test set
+	- out-of sample error 
 - U-shaped curve
 </script></section><section data-markdown><script type="text/template">
-## model selection
+## the test set
 
 - during training we don't have access to test set:
 	- split training data into training set and validation set
 		- e.g. 80/20
-	- cross validation (k folds) 
-- some interesting concepts
-	- Occam's razor
-	- Rashomon and the multiplicity of good models
+	
+</script></section><section data-markdown><script type="text/template">
+## cross validation
+
+- cross validation (k folds) 
+</script></section><section data-markdown><script type="text/template">
+## model selection
+
+- optimise over models (or hyperparameters)
+- use a validation set
+</script></section><section data-markdown><script type="text/template">
+## model selection 
+
+- training set
+- validation set
+- test set (don't touch!)
 </script></section><section data-markdown><script type="text/template">
 ## No free lunch theorem 
 
@@ -337,6 +369,8 @@ Large grant = $1,000,000 | large grant = $50,000
 - no free lunch theorem (Wolpert 1996)
 - no universally best model across all problems
 - assumptions that works well in one domain often fail in another
+</script></section><section data-markdown><script type="text/template">
+## The unreasonable effectiveness of data
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Summary
 </script></section><section data-markdown><script type="text/template">
