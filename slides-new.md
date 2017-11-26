@@ -103,7 +103,7 @@ Note: Today we need computerised methods for most problems
 
 ----
 
-## Prerequisites
+## Prerequisites:
 
 - There is a pattern in the data
 - We cannot write down a mathematical model of it
@@ -111,9 +111,35 @@ Note: Today we need computerised methods for most problems
 
 ----
 
-## Awesome examples go here...
+## But then you can do a lot...
 
 ----
+
+### colorization
+
+<img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Colorization-of-Black-and-White-Photographs.png height = 500>
+
+----
+
+<img src=http://cs.stanford.edu/people/karpathy/deepimagesent/dogball.png height = 500>
+
+----
+
+<img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatic-Image-Caption-Generation.png height = 500>
+
+----
+
+<img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Instant-Visual-Translation.png>
+
+----
+
+<img src=https://camo.githubusercontent.com/d371bad7ae1f9f5bf9e0f1906e46726e503ab99d/687474703a2f2f692e696d6775722e636f6d2f45334d677a6e422e6a7067>
+
+----
+
+<img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatically-Create-Styled-Image-From-Sketch.png height>
+
+---
 
 ## Machine Learning: A Taxonomy
 
