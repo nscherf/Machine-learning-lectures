@@ -9,8 +9,9 @@ theme: black
 
 ---
 
-<!-- .slide: data-background="img/robots.png" -->  
-## An integral part of Artificial Intelligence
+<!-- .slide: data-background="https://cdn.redshift.autodesk.com/2016/05/Machine-Learning-hero.jpg" -->  
+
+Note: An integral part of Artificial Intelligence
 
 
 ----
@@ -32,12 +33,12 @@ theme: black
 
 AI solved problems that are intellectually difficult for humans
 
-<img src="http://www.publicdomainpictures.net/pictures/200000/velka/chess-board-1473668683CKw.jpg" height = 500 >
+<img src="https://images.chesscomfiles.com/uploads/v1/blog/299228.1a04250c.5000x5000o.9607e919a884.jpeg" height = 500 >
 
 ----
 
 The true challenge: tasks that are easy for people to do but hard to describe formally 
-<img src="img/faces.jpg" height = 500 >
+<img src="https://www.peonderey.com/wp-content/uploads/2016/05/13242063_10154042837576675_1639904989_o.jpg" height = 500 >
 
 ----
 
@@ -56,8 +57,6 @@ Note: - grew out of quest for AI
 		- OCR, SPAM, Network intrusion, Computer Vision
 
 ----
-
-## A time line
 
 - 1763 | Bayes 
 - 1913 | Markov chains
@@ -95,7 +94,7 @@ Note: Today we need computerised methods for most problems
 
 ----
 
-<img src="img/learning-algorithm-scheme.png" height = 500 >
+<img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/learning-algorithm-scheme.png" height = 500 >
 
 ----
 
@@ -155,7 +154,7 @@ Note: - response variable y categorical
 ----
 
 The drosophila of Machine Learning:
-<img src="	../img/mnist.png" height=500 >
+<img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/mnist.png" height=500 >
 
  
 
