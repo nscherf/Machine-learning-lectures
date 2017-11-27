@@ -24,9 +24,9 @@ Note: An integral part of Artificial Intelligence
 
 ## AI: a long history
 
-> The Analytical Engine has no pretensions whatever to originate anything.	It can do whatever we know how to order it to perform... --- Ada Lovelace 1843
+- *The Analytical Engine has no pretensions whatever to originate anything.	It can do whatever we know how to order it to perform...* --- Ada Lovelace 1843
 
-- The Imitation Game - Alan Turing "Computing Machinery and Intelligence", 1950
+- The Imitation Game - Alan Turing "Computing Machinery and Intelligence". Mind. 1950
 
 ----
 
@@ -89,7 +89,7 @@ Note: Today we need computerised methods for most problems, <!-- .slide: data-ba
 
 ## Machine Learning:
 
-> ...a set of methods that can automatically detect patterns in data, and then *use the uncovered patterns to predict future data*, or to perform other kinds of decision making under uncertainty. -- Murphy 2012, Machine Learning
+ ...a set of methods that can **automatically detect patterns** in data, and then use the uncovered patterns to **predict future data**, or to perform other kinds of decision making under uncertainty. -- Murphy 2012, Machine Learning
 
 ----
 
@@ -146,20 +146,21 @@ Note: Today we need computerised methods for most problems, <!-- .slide: data-ba
 
 ---
 
-## Machine Learning: A Taxonomy
+## A Taxonomy
 
-> A computer program is said to *learn* from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. -- from Mitchell, T. (1997). Machine Learning. McGraw Hill. 
+ A computer program is said to *learn* from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. -- Mitchell (1997). Machine Learning. 
 
 ---
 
 ## The Task, T
-> A computer program is said to *learn* from experience E with respect to some class of **tasks T** and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. -- from Mitchell, T. (1997). Machine Learning. McGraw Hill. 
+
+ A computer program is said to learn from experience E with respect to some class of **tasks T** and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. -- Mitchell (1997). Machine Learning.  
 
 ----
 
 ## The Task, T
 
-- ML is interesting for tasks that are too difficult to solve with fixed programs 
+- ML is interesting for tasks that are too difficult to solve with fixed algorithms 
 
 ----
 
@@ -167,7 +168,6 @@ Note: Today we need computerised methods for most problems, <!-- .slide: data-ba
 
 - learn mapping from $\vec{x}$ to $y \in \\{ 1, ..., C \\} $
 - or probability distribution over classes
-- possibly with missing inputs (e.g. medical records)
 
 Note: - response variable y categorical
 				- C = 2 binary
@@ -177,14 +177,14 @@ Note: - response variable y categorical
 
 ## Classification examples
 
-- email spam filtering
-- object recognition / image classification
-	- handwriting recognition
-	- face detection 
+- email spam filtering,
+- object recognition / image classification:
+	- handwriting recognition,
+	- face detection. 
 
 ----
 
-The drosophila of Machine Learning:
+MNIST: The drosophila of Machine Learning:
 <img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/mnist.png" height=500 >
 
  
@@ -193,7 +193,7 @@ The drosophila of Machine Learning:
 
 ## Regression
 
-- predict numerical value given input
+- predict numerical value
 - approximate $ y = f(\vec{x}) $ by $ \hat{y} = \hat{f}(\vec{x}) $
 
 Note: - response variable real-valued 
@@ -234,24 +234,27 @@ Note: - response variable real-valued
 
 ## The Performance Measure, P
 
-> A computer program is said to *learn* from experience E with respect to some class of tasks T and **performance measure P** if its performance at tasks in T, as measured by P, improves with experience E. -- from Mitchell, T. (1997). Machine Learning. McGraw Hill. 
+ A computer program is said to learn from experience E with respect to some class of tasks T and **performance measure P** if its performance at tasks in T, as measured by P, improves with experience E. -- Mitchell (1997). Machine Learning.  
 
 ----
 
 ## The Performance Measure, P
 
-- classification: accuracy, error rate (expected 0-1 loss)
-- density estimation: average (log) probability of examples
-- depends on application
+- Describes what is a good/bad solution
+- Classification: accuracy, error rate
+- Density estimation: (log) probability of examples
+- Depends on application:
 	- what are problematic mistakes?
-	- e.g. regression: regular medium mistakes or rare large mistakes
 
+
+Note: error rate = Expected 0-1 loss
+	- e.g. regression: regular medium mistakes or rare large mistakes
 
 ---
 
 ## The Experience, E
 
-> A computer program is said to *learn* from **experience E** with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. -- from Mitchell, T. (1997). Machine Learning. McGraw Hill. 
+ A computer program is said to learn from **experience E** with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. -- Mitchell (1997). Machine Learning.
 
 ----
 
@@ -263,20 +266,19 @@ Note: - response variable real-valued
 
 ## Supervised Learning (predictive learning)
 
-- learn from data containing features and associated label(s) (given by an "instructor")
-- learn mapping from features to response variable
-- conditional density estimation: learn $p(\vec{y}| \vec{x})$ given $\vec{x}$ and $\vec{y}$
+- Learn from data containing features and associated label(s) (given by an "instructor").
+- Learn mapping from features to response variable.
+- Conditional density: learn $p(\vec{y}| \vec{x})$ given $\vec{x}$ and $\vec{y}$.
 
 ----
 
 ## Unsupervised Learning (descriptive learning) 
 
-- dataset containing many features
-	- learn useful properties of structure 
-	- find interesting patterns in the data
-- knowledge discovery, density estimation 
-- unconditional density estimation: learn $p(\vec{x})$ given $\vec{x}$
-- requires no training labels
+- From a dataset containing many features:
+	- Learn structural properties (knowledge discovery),
+	- Find interesting patterns (density estimation).
+- Unconditional density: learn $p(\vec{x})$ given $\vec{x}$
+	- Requires no training labels.
 
 Note: Unsupervised learning might be much closer to how animals learn: "When we’re learning to see, nobody’s telling us what the right answers are — we just look. Every so often, your mother says “that’s a dog”, but that’s very little information. You’d be lucky if you got a few bits of information — even one bit per second — that way. The brain’s visual system has 10^14 neural connections. And you only live for 10^9 seconds. So it’s no use learning one bit per second. You need more like 10^5 bits per second. And there’s only one place you can get that much information: from the input itself." — Geoffrey Hinton, 1996 (quoted in (Gorder 2006)).
 
@@ -284,29 +286,29 @@ Note: Unsupervised learning might be much closer to how animals learn: "When we�
 
 ## Supervised vs Unsupervised
 
-- Not a formal distinction 
-- unsupervised problem could be split into a sequence of supervised problems: $ p(\vec{x}) = p(x_1) p(x_2 | x_1) p(x_3 | x_1, x_2) ... $
-- also works the other way around $ p(y|x) = \frac{p(x,y)}{(\sum_{y'} p(x,y'))}$
-- i.e. most methods could do both supervised and unsupervised 
 
+- Unsupervised problem could be split into a sequence of supervised problems: $ p(\vec{x}) = p(x_1) p(x_2 | x_1) p(x_3 | x_1, x_2) ... $
+- and vice versa: $ p(y|x) = \frac{p(x,y)}{(\sum_{y'} p(x,y'))}$.
+
+Note: - Unsupervised and supervised learning is mathematically/formally the same 
 ----
 
 ## Typical examples supervised learning
 
-- regression
-- classification,
-- structured output,
-- denoising
+- Regression,
+- Classification,
+- Denoising.
 
 ----
 
 ## Typical examples unsupervised Learning
 
-- density estimation 
-- clustering
-- imputation 
-- latent factor discovery / dimensionality reduction
-- (graph) structure (i.e. influence/correlations between variables)
+- Clustering,
+- Density estimation,
+- Imputation,
+- Latent factor discovery,
+- Dimensionality reduction,
+- Graph structure estimation.
 
 ----
 
@@ -316,7 +318,7 @@ Clustering
 
 ----
 
-Unsupervised Learning: Density Estimation
+Density Estimation
   
 <img src="https://c2.staticflickr.com/4/3258/5851679238_23b1b2bafe_b.jpg" height = 500>
 
@@ -337,17 +339,16 @@ Dimensionality Reduction
 
 ## Beyond (un)supervised 
 
-- semi-supervised learning
-	- sparse labelling of dataset 
-- multi-instance learning
-	- only known if a collection contains example of class or not
-	- individual members not labeled 
+- Semi-supervised learning:
+	- sparse labelling of dataset.
+- Multi-instance learning
+	- only known if a collection contains example of class or not.
 
 ---
 
 ## Reinforcement Learning
 
-- learning successful behavioural strategies from occasional rewards
+- Learning successful behavioural strategies from occasional rewards.
 
 ----
 
@@ -361,21 +362,21 @@ Dimensionality Reduction
 
 ----
 
-## Machine Learning vs. Optimisation
+### Machine Learning vs. Optimisation
 
-Fitting data (optimisation) is different from finding patterns that generalise to unseen examples (machine learning)
+Fitting data (Optimisation) is different from finding patterns that generalise to unseen examples (ML).
 
 ----
 
 
 Machine Learning | Statistics
 ---|---
-Networks, graphs | model
-Weights | parameters
-Learning | fitting
-Supervised learning | regression/classification
-Unsupervised learning | density estimation, clustering
-Large grant = $1,000,000 | large grant = $50,000
+Networks, Graphs | Model
+Weights | Parameters
+Learning | Fitting
+Supervised learning | Regression/Classification
+Unsupervised learning | Density estimation, Clustering
+Large grant = $1,000,000 | Large grant = $50,000
 
 <small> *from http://statweb.stanford.edu/~tibs/stat315a/glossary.pdf* </small>
 
@@ -397,9 +398,8 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ### The design matrix
 
-- N examples 
-- described by D features
-- NxD design matrix
+- N examples, described by D features
+	- NxD design matrix
 - predict the value of N target values
 
 <img src=https://i.stack.imgur.com/VZtEr.jpg height = 200>
@@ -408,12 +408,8 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ### Parametric vs. Non-parametric models
 
-- parametric: closed form, #parameters is fixed
-	- fast to compute
-	- strong assumptions
-- non-parametric, #parameters grows with amount of (training) data
-	- flexible
-	- often computationally intractable
+- parametric: closed form, i.e. #parameters is fixed	
+- non-parametric: #parameters grows with amount of (training) data
 
 ----
 
@@ -421,33 +417,38 @@ Large grant = $1,000,000 | large grant = $50,000
 
 <img src=http://cs231n.github.io/assets/knn.jpeg >
 
-- guaranteed error rate <= 2 Bayes error (for infinite training set)
-- scales with the size of the training set 
+- guaranteed nearly optimal error rate (for $\infty $ data)
+- computation time scales with the size data
 
 ----
 
 ### The curse of dimensionality
 
-- Bellman 
-- in high dimensions sampling effort grows exponentially
-- (Euclidean) distances become meaningless 
+- Sampling effort grows exponentially with dimensionality,
+- (Euclidean) distances become meaningless. 
+
+
+Note: 
+	- Bellman
 	- ration between min and max distance approaches 1 with D -> Inf
-- growing hypercube to collect data: e(f) = f^(1/D)
-	- if we want f = 0.1 (10% of data) in D=10 dimensions, side length e = 0.8 (80% of max side-length)
+	- collect data in hypercube: to sample 10% of data in 10 dimensions, we need a subvolume with 80% of max side-length.
+
 
 ----
 
 ### Parametric models
 
-- to escape the curse of dimensionality we can make assumptions about the data distribution (inductive bias)
-- parametric models with fixed number of parameters
+- Escape the curse of dimensionality by making assumptions about the data distribution (inductive bias).
+- Parametric models with fixed number of parameters:
+	- fast to compute,
+	- strong assumptions.
 
 ----
 
 ### Parametric models: regression
 
-- linear regression
-- $y(x,w) = w_0 + w_1 x_1 + ... + w_D x_D$
+- linear regression: 
+	- $y(x,w) = w_0 + w_1 x_1 + ... + w_D x_D$
 
 <img src=https://cdn-images-1.medium.com/max/600/1*iuqVEjdtEMY8oIu3cGwC1g.png height = 400 style="background-color:white;">
 
@@ -455,9 +456,9 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ### Parametric models: classification
 
-- logistic regression
-- linear regression + sigmoid nonlinearity
-- $ y(\Phi) = \sigma (\vec{w}^T \Phi)$
+- logistic regression:
+	- linear regression + sigmoid nonlinearity
+	- $ y(\Phi) = \sigma (\vec{w}^T \Phi)$
 
 <img src=http://www.saedsayad.com/images/LogReg_1.png>
 
@@ -465,15 +466,14 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ### Generalisation 
 
-- how is performance on **unseen data** ?
-- using a **test set** separate from training set
+- The central question: How is the performance on **unseen data**?
 
 ----
 
 ### Overfitting
 
-- if we model every minute variation in the training data, we are likely to fit the noise as well
-- less accurate prediction for future data
+- If we model every minute variation in the training data, we are likely to fit the noise as well:
+	- less accurate prediction for future data
 - perfect fit of training data = bad generalisation to unseen data
 
 ----
@@ -481,61 +481,62 @@ Large grant = $1,000,000 | large grant = $50,000
 ### Model selection
 - how to select a good model (e.g. the k in kNN)?
 	- misclassification rate on training set
-	- but: we care about generalisation error: misclassification rate on test set
-	- out-of sample error 
+	- but: we care about generalisation error: 
+		- the out-of sample error.
+- Solution: using a **test set** separate from training set.
 
-----
-
-<img src=https://pbs.twimg.com/media/CnRKSa8UsAAR2JC.jpg>
+Note: link to u-curve.. <img src=https://pbs.twimg.com/media/CnRKSa8UsAAR2JC.jpg>
 
 ----
 
 ### the test set
 
-- during training we don't have access to test set:
-	- split training data into training set and validation set
-		- e.g. 80/20
+- Split training data into training set and test set:
+	- e.g. 80/20.
+- And don't look at this test set!
 	
-
-----
-
-### Cross Validation
-
+Note:
 - cross validation (k folds)
-
 <img src= https://cdn-images-1.medium.com/max/1600/1*J2B_bcbd1-s1kpWOu_FZrg.png height = 500>
 
 ----
 
 ## model selection
 
-- optimise over models (or hyperparameters)
-- use a validation set
+- But how to optimise over different models?
+	- e.g. tuning the hyperparameters
+- Don't use the test set!
+- Use an validation set from the training data!
+	- e.g. use cross validation...
 
 ----
 
 ## model selection 
 
-- training set
-- validation set
-- test set (don't touch!)
+So we split the data into: 
+- Training set
+- (Validation set)
+- Test set (don't touch!)
 
 ----
 
-## No free lunch theorem 
-
-> All models are wrong, but some models are useful. — George Box (Box and Draper 1987, p424).
-
-- *no free lunch* theorem (Wolpert 1996)
-	- no universally best model across all problems
-	- assumptions that works well in one domain often fail in another
+> All models are wrong, but some models are useful. — Box and Draper 1987.
 
 ----
 
-### The unreasonable effectiveness of data
+### The *no free lunch* theorem 
+	
+- Wolpert 1996
+- No universally best model across all problems!
+- Assumptions that works well in one domain often fail in another.
 
-- simple models with lots of data will beat sophisticated models with few data
-- try to use unsupervised learning if you can
+----
+
+#### The unreasonable effectiveness of data
+
+- Simple models with lots of data will beat sophisticated models with few data!
+- Labeled data is often scarce and expensive:
+	- Try to use unsupervised learning if you can.
 
 ---
 
@@ -543,15 +544,14 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ----
 
-- types of ML methods
-	- supervised, unsupervised
-	- classification, regression
-	- parametric vs. non-parametric 
-- basic concepts
-	- input, features, targets ...  
-	- model selection
-		- generalisation and overfitting
-		- training set, test set, validation set 
+- Types of ML methods:
+	- Supervised, Unsupervised
+	- Classification, Regression
+	- Parametric vs. Non-parametric 
+- Basic concepts
+	- Design matrix, Features...
+	- Generalisation, Overfitting, Underfitting
+	- Training set, Validation set, Test set 
 
 ---
 
@@ -571,13 +571,13 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ----
 
-- Goodfellow, Courville, Bengio - Deep Learning
+- Goodfellow, Bengio, Courville - Deep Learning
 
 <img src=https://images.gr-assets.com/books/1478212695l/30422361.jpg height = 400>
 
 ----
 
-- Geron - Hands-on Machine Learning with Scikit-Learn and TensorFlow
+- Geron - Hands-on Machine Learning
 
 <img src=https://covers.oreillystatic.com/images/0636920052289/lrg.jpg height = 500>
 
