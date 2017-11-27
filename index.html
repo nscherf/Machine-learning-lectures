@@ -42,7 +42,6 @@ The true challenge: tasks that are easy for people to do but hard to describe fo
 
 - evolved in the 50s and 60s from AI, pattern recognition and computational learning theory	
 - learn from data (and predict)
-- similar to computational statistics and scientific method
 
 
 <aside class="notes"><ul>
@@ -78,20 +77,18 @@ The true challenge: tasks that are easy for people to do but hard to describe fo
 <aside class="notes"><p>Tycho Brahe&#39;s careful observations were used by Kepler to derive his three laws of planetary motion</p>
 </aside></script></section><section data-markdown><script type="text/template">
 ## Knowledge from data 
-<!-- .slide: data-background="https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg"-->
+
  
 > We are drowning in information and starving for knowledge. — John Naisbitt.
 
-<aside class="notes"><p>Today we need computerised methods for most problems</p>
+<aside class="notes"><p>Today we need computerised methods for most problems, <!-- .slide: data-background="https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg"--></p>
 </aside></script></section><section data-markdown><script type="text/template">
 ## Machine Learning:
 
 > ...a set of methods that can automatically detect patterns in data, and then *use the uncovered patterns to predict future data*, or to perform other kinds of decision making under uncertainty. -- Murphy 2012, Machine Learning
 </script></section><section data-markdown><script type="text/template">
-<img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/learning-algorithm-scheme.png" height = 500 >
-</script></section><section data-markdown><script type="text/template">
-- Rules, Data  -> [Classical Programming] -> Answers <!-- .element: class="fragment" -->
-- Data, Answers -> [ML] -> Rules (programs, computational models) <!-- .element: class="fragment" -->
+- Rules, Data  -> [Programming] -> Answers
+- Data, Answers -> [ML] -> Rules <!-- .element: class="fragment" -->
 </script></section><section data-markdown><script type="text/template">
 ## Prerequisites:
 
@@ -105,14 +102,24 @@ The true challenge: tasks that are easy for people to do but hard to describe fo
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Colorization-of-Black-and-White-Photographs.png height = 500>
 </script></section><section data-markdown><script type="text/template">
+### detection 
+
 <img src=http://cs.stanford.edu/people/karpathy/deepimagesent/dogball.png height = 500>
 </script></section><section data-markdown><script type="text/template">
+### image captioning
+
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatic-Image-Caption-Generation.png height = 500>
 </script></section><section data-markdown><script type="text/template">
+### image translation
+
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Instant-Visual-Translation.png>
 </script></section><section data-markdown><script type="text/template">
+### face generation 
+
 <img src=https://camo.githubusercontent.com/d371bad7ae1f9f5bf9e0f1906e46726e503ab99d/687474703a2f2f692e696d6775722e636f6d2f45334d677a6e422e6a7067>
 </script></section><section data-markdown><script type="text/template">
+### automated stylised drawing
+
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatically-Create-Styled-Image-From-Sketch.png height>
 </script></section></section><section  data-markdown><script type="text/template">
 ## Machine Learning: A Taxonomy
@@ -253,6 +260,11 @@ Unsupervised Learning: Density Estimation
 </script></section><section data-markdown><script type="text/template">
 Dimensionality Reduction
 
+<img src="https://blog.sourced.tech/post/lapjv/mnist_after.png" height = "500">
+
+</script></section><section data-markdown><script type="text/template">
+Dimensionality Reduction
+
 <img src="https://c2.staticflickr.com/2/1501/26194566691_ef39f2c77b_b.jpg" height = "500">
 </script></section><section data-markdown><script type="text/template">
 ## Beyond (un)supervised 
@@ -271,7 +283,7 @@ Dimensionality Reduction
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Machine Learning: The hype
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Gartner_Hype_Cycle.svg" height = "400">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Gartner_Hype_Cycle.svg" height = "400" style="background-color:white;">
 </script></section><section data-markdown><script type="text/template">
 ## Machine Learning vs. Optimisation
 
@@ -294,16 +306,19 @@ Large grant = $1,000,000 | large grant = $50,000
 - Breiman, Leo. 2001. “Statistical Modeling: The Two Cultures.” Statistical Science: A Review Journal of the Institute of Mathematical Statistics 16 (3) 199–231.
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Some basic concepts
-
 </script></section><section data-markdown><script type="text/template">
-
-## The design matrix
-- features
- - feature vectors
- - feature extraction
-- classes/categories/groups
+<img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/learning-algorithm-scheme.png" height = 500 >
 </script></section><section data-markdown><script type="text/template">
-## parametric vs. Non-parametric models
+### The design matrix
+
+- N examples 
+- described by D features
+- NxD design matrix
+- predict the value of N target values
+
+<img src=https://i.stack.imgur.com/VZtEr.jpg height = 200>
+</script></section><section data-markdown><script type="text/template">
+### Parametric vs. Non-parametric models
 
 - parametric: closed form, #parameters is fixed
 	- fast to compute
@@ -312,57 +327,73 @@ Large grant = $1,000,000 | large grant = $50,000
 	- flexible
 	- often computationally intractable
 </script></section><section data-markdown><script type="text/template">
-## parametric vs. Non-parametric models - K-nearest neighbours
+### Parametric vs. Non-parametric models - K-nearest neighbours
+
+<img src=http://cs231n.github.io/assets/knn.jpeg >
+
+- guaranteed error rate <= 2 Bayes error (for infinite training set)
+- scales with the size of the training set 
 </script></section><section data-markdown><script type="text/template">
-## The curse of dimensionality
+### The curse of dimensionality
+
 - Bellman 
-- in high dimensions, (Euclidean) distances become meaningless 
+- in high dimensions sampling effort grows exponentially
+- (Euclidean) distances become meaningless 
+	- ration between min and max distance approaches 1 with D -> Inf
 - growing hypercube to collect data: e(f) = f^(1/D)
-	- if we want f = 0.1 (10% of data) in D=10 dimensions, side length e = 0.8 (80% of max side-length) - not very local
-- ration between min and max distance approaches 1 with D -> Inf
+	- if we want f = 0.1 (10% of data) in D=10 dimensions, side length e = 0.8 (80% of max side-length)
 </script></section><section data-markdown><script type="text/template">
-## parametric models
+### Parametric models
 
 - to escape the curse of dimensionality we can make assumptions about the data distribution (inductive bias)
 - parametric models with fixed number of parameters
 </script></section><section data-markdown><script type="text/template">
-## parametric models: regression
+### Parametric models: regression
 
 - linear regression
+- $y(x,w) = w_0 + w_1 x_1 + ... + w_D x_D$
+
+<img src=https://cdn-images-1.medium.com/max/600/1*iuqVEjdtEMY8oIu3cGwC1g.png height = 400 style="background-color:white;">
 </script></section><section data-markdown><script type="text/template">
-## parametric models: classification
+### Parametric models: classification
 
 - logistic regression
+- linear regression + sigmoid nonlinearity
+- $ y(\Phi) = \sigma (\vec{w}^T \Phi)$
+
+<img src=http://www.saedsayad.com/images/LogReg_1.png>
 </script></section><section data-markdown><script type="text/template">
-## generalisation 
+### Generalisation 
 
 - how is performance on **unseen data** ?
 - using a **test set** separate from training set
 </script></section><section data-markdown><script type="text/template">
-## Overfitting
+### Overfitting
 
 - if we model every minute variation in the training data, we are likely to fit the noise as well
 - less accurate prediction for future data
 - perfect fit of training data = bad generalisation to unseen data
 </script></section><section data-markdown><script type="text/template">
-## model selection and the feasibility of learning
-
+### Model selection
 - how to select a good model (e.g. the k in kNN)?
 	- misclassification rate on training set
 	- but: we care about generalisation error: misclassification rate on test set
 	- out-of sample error 
-- U-shaped curve
 </script></section><section data-markdown><script type="text/template">
-## the test set
+<img src=https://pbs.twimg.com/media/CnRKSa8UsAAR2JC.jpg>
+</script></section><section data-markdown><script type="text/template">
+### the test set
 
 - during training we don't have access to test set:
 	- split training data into training set and validation set
 		- e.g. 80/20
 	
 </script></section><section data-markdown><script type="text/template">
-## cross validation
+### Cross Validation
 
-- cross validation (k folds) 
+- cross validation (k folds)
+
+<img src= https://cdn-images-1.medium.com/max/1600/1*J2B_bcbd1-s1kpWOu_FZrg.png height = 500>
 </script></section><section data-markdown><script type="text/template">
 ## model selection
 
@@ -378,11 +409,15 @@ Large grant = $1,000,000 | large grant = $50,000
 ## No free lunch theorem 
 
 > All models are wrong, but some models are useful. — George Box (Box and Draper 1987, p424).
-- no free lunch theorem (Wolpert 1996)
-- no universally best model across all problems
-- assumptions that works well in one domain often fail in another
+
+- *no free lunch* theorem (Wolpert 1996)
+	- no universally best model across all problems
+	- assumptions that works well in one domain often fail in another
 </script></section><section data-markdown><script type="text/template">
-## The unreasonable effectiveness of data
+### The unreasonable effectiveness of data
+
+- simple models with lots of data will beat sophisticated models with few data
+- try to use unsupervised learning if you can
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Summary
 </script></section><section data-markdown><script type="text/template">
@@ -391,13 +426,40 @@ Large grant = $1,000,000 | large grant = $50,000
 	- classification, regression
 	- parametric vs. non-parametric 
 - basic concepts
-	- curse of dimensionality 
+	- input, features, targets ...  
 	- model selection
 		- generalisation and overfitting
 		- training set, test set, validation set 
-	- There is no free lunch!
+</script></section></section><section ><section data-markdown><script type="text/template">
+# books 
+</script></section><section data-markdown><script type="text/template">
+- Bishop - Pattern Recognition and Machine Learning
 
-</script></section></section></div>
+<img src=https://www.microsoft.com/en-us/research/wp-content/uploads/2016/06/Springer-Cover-Image.jpg height = 500>
+</script></section><section data-markdown><script type="text/template">
+- Murphy - Machine Learning: A Probabilistic Perspective
+
+<img src=https://mitpress.mit.edu/sites/default/files/9780262018029.jpg height = 500>
+</script></section><section data-markdown><script type="text/template">
+- Goodfellow, Courville, Bengio - Deep Learning
+
+<img src=https://images.gr-assets.com/books/1478212695l/30422361.jpg height = 400>
+</script></section><section data-markdown><script type="text/template">
+- Geron - Hands-on Machine Learning with Scikit-Learn and TensorFlow
+
+<img src=https://covers.oreillystatic.com/images/0636920052289/lrg.jpg height = 500>
+</script></section><section data-markdown><script type="text/template">
+- Abu-Mostafa, Magdon-Ismail, Lin - Learning From Data
+
+<img src=http://amlbook.com/images/front.jpg height = 500>
+</script></section><section data-markdown><script type="text/template">
+- Hastie, Tibshirani, Friedman - The Elements of Statistical Learning
+
+<img src=https://web.stanford.edu/~hastie/ElemStatLearn/CoverII_small.jpg height = 500>
+
+---- 
+
+The end</script></section></section></div>
         </div>
 
         <script src="./lib/js/head.min.js"></script>

@@ -46,7 +46,6 @@ The true challenge: tasks that are easy for people to do but hard to describe fo
 
 - evolved in the 50s and 60s from AI, pattern recognition and computational learning theory	
 - learn from data (and predict)
-- similar to computational statistics and scientific method
 
 
 Note: - grew out of quest for AI
@@ -80,11 +79,11 @@ Note: Tycho Brahe's careful observations were used by Kepler to derive his three
 ----
 
 ## Knowledge from data 
-<!-- .slide: data-background="https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg"-->
+
  
 > We are drowning in information and starving for knowledge. — John Naisbitt.
 
-Note: Today we need computerised methods for most problems
+Note: Today we need computerised methods for most problems, <!-- .slide: data-background="https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg"-->
 
 ----
 
@@ -94,12 +93,8 @@ Note: Today we need computerised methods for most problems
 
 ----
 
-<img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/learning-algorithm-scheme.png" height = 500 >
-
-----
-
-- Rules, Data  -> [Classical Programming] -> Answers <!-- .element: class="fragment" -->
-- Data, Answers -> [ML] -> Rules (programs, computational models) <!-- .element: class="fragment" -->
+- Rules, Data  -> [Programming] -> Answers
+- Data, Answers -> [ML] -> Rules <!-- .element: class="fragment" -->
 
 ----
 
@@ -121,21 +116,31 @@ Note: Today we need computerised methods for most problems
 
 ----
 
+### detection 
+
 <img src=http://cs.stanford.edu/people/karpathy/deepimagesent/dogball.png height = 500>
 
 ----
+
+### image captioning
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatic-Image-Caption-Generation.png height = 500>
 
 ----
 
+### image translation
+
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Instant-Visual-Translation.png>
 
 ----
 
+### face generation 
+
 <img src=https://camo.githubusercontent.com/d371bad7ae1f9f5bf9e0f1906e46726e503ab99d/687474703a2f2f692e696d6775722e636f6d2f45334d677a6e422e6a7067>
 
 ----
+
+### automated stylised drawing
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatically-Create-Styled-Image-From-Sketch.png height>
 
@@ -319,6 +324,13 @@ Unsupervised Learning: Density Estimation
 
 Dimensionality Reduction
 
+<img src="https://blog.sourced.tech/post/lapjv/mnist_after.png" height = "500">
+
+
+----
+
+Dimensionality Reduction
+
 <img src="https://c2.staticflickr.com/2/1501/26194566691_ef39f2c77b_b.jpg" height = "500">
 
 ----
@@ -345,7 +357,7 @@ Dimensionality Reduction
 
 ## Machine Learning: The hype
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Gartner_Hype_Cycle.svg" height = "400">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Gartner_Hype_Cycle.svg" height = "400" style="background-color:white;">
 
 ----
 
@@ -377,19 +389,24 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ## Some basic concepts
 
+----
+
+<img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/learning-algorithm-scheme.png" height = 500 >
 
 ----
 
+### The design matrix
 
-## The design matrix
-- features
- - feature vectors
- - feature extraction
-- classes/categories/groups
+- N examples 
+- described by D features
+- NxD design matrix
+- predict the value of N target values
+
+<img src=https://i.stack.imgur.com/VZtEr.jpg height = 200>
 
 ----
 
-## parametric vs. Non-parametric models
+### Parametric vs. Non-parametric models
 
 - parametric: closed form, #parameters is fixed
 	- fast to compute
@@ -400,46 +417,60 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ----
 
-## parametric vs. Non-parametric models - K-nearest neighbours
+### Parametric vs. Non-parametric models - K-nearest neighbours
+
+<img src=http://cs231n.github.io/assets/knn.jpeg >
+
+- guaranteed error rate <= 2 Bayes error (for infinite training set)
+- scales with the size of the training set 
 
 ----
 
-## The curse of dimensionality
+### The curse of dimensionality
+
 - Bellman 
-- in high dimensions, (Euclidean) distances become meaningless 
+- in high dimensions sampling effort grows exponentially
+- (Euclidean) distances become meaningless 
+	- ration between min and max distance approaches 1 with D -> Inf
 - growing hypercube to collect data: e(f) = f^(1/D)
-	- if we want f = 0.1 (10% of data) in D=10 dimensions, side length e = 0.8 (80% of max side-length) - not very local
-- ration between min and max distance approaches 1 with D -> Inf
+	- if we want f = 0.1 (10% of data) in D=10 dimensions, side length e = 0.8 (80% of max side-length)
 
 ----
 
-## parametric models
+### Parametric models
 
 - to escape the curse of dimensionality we can make assumptions about the data distribution (inductive bias)
 - parametric models with fixed number of parameters
 
 ----
 
-## parametric models: regression
+### Parametric models: regression
 
 - linear regression
+- $y(x,w) = w_0 + w_1 x_1 + ... + w_D x_D$
+
+<img src=https://cdn-images-1.medium.com/max/600/1*iuqVEjdtEMY8oIu3cGwC1g.png height = 400 style="background-color:white;">
 
 ----
 
-## parametric models: classification
+### Parametric models: classification
 
 - logistic regression
+- linear regression + sigmoid nonlinearity
+- $ y(\Phi) = \sigma (\vec{w}^T \Phi)$
+
+<img src=http://www.saedsayad.com/images/LogReg_1.png>
 
 ----
 
-## generalisation 
+### Generalisation 
 
 - how is performance on **unseen data** ?
 - using a **test set** separate from training set
 
 ----
 
-## Overfitting
+### Overfitting
 
 - if we model every minute variation in the training data, we are likely to fit the noise as well
 - less accurate prediction for future data
@@ -447,17 +478,19 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ----
 
-## model selection and the feasibility of learning
-
+### Model selection
 - how to select a good model (e.g. the k in kNN)?
 	- misclassification rate on training set
 	- but: we care about generalisation error: misclassification rate on test set
 	- out-of sample error 
-- U-shaped curve
 
 ----
 
-## the test set
+<img src=https://pbs.twimg.com/media/CnRKSa8UsAAR2JC.jpg>
+
+----
+
+### the test set
 
 - during training we don't have access to test set:
 	- split training data into training set and validation set
@@ -466,9 +499,11 @@ Large grant = $1,000,000 | large grant = $50,000
 
 ----
 
-## cross validation
+### Cross Validation
 
-- cross validation (k folds) 
+- cross validation (k folds)
+
+<img src= https://cdn-images-1.medium.com/max/1600/1*J2B_bcbd1-s1kpWOu_FZrg.png height = 500>
 
 ----
 
@@ -490,13 +525,17 @@ Large grant = $1,000,000 | large grant = $50,000
 ## No free lunch theorem 
 
 > All models are wrong, but some models are useful. — George Box (Box and Draper 1987, p424).
-- no free lunch theorem (Wolpert 1996)
-- no universally best model across all problems
-- assumptions that works well in one domain often fail in another
+
+- *no free lunch* theorem (Wolpert 1996)
+	- no universally best model across all problems
+	- assumptions that works well in one domain often fail in another
 
 ----
 
-## The unreasonable effectiveness of data
+### The unreasonable effectiveness of data
+
+- simple models with lots of data will beat sophisticated models with few data
+- try to use unsupervised learning if you can
 
 ---
 
@@ -509,9 +548,51 @@ Large grant = $1,000,000 | large grant = $50,000
 	- classification, regression
 	- parametric vs. non-parametric 
 - basic concepts
-	- curse of dimensionality 
+	- input, features, targets ...  
 	- model selection
 		- generalisation and overfitting
 		- training set, test set, validation set 
-	- There is no free lunch!
 
+---
+
+# books 
+
+----
+
+- Bishop - Pattern Recognition and Machine Learning
+
+<img src=https://www.microsoft.com/en-us/research/wp-content/uploads/2016/06/Springer-Cover-Image.jpg height = 500>
+
+----
+
+- Murphy - Machine Learning: A Probabilistic Perspective
+
+<img src=https://mitpress.mit.edu/sites/default/files/9780262018029.jpg height = 500>
+
+----
+
+- Goodfellow, Courville, Bengio - Deep Learning
+
+<img src=https://images.gr-assets.com/books/1478212695l/30422361.jpg height = 400>
+
+----
+
+- Geron - Hands-on Machine Learning with Scikit-Learn and TensorFlow
+
+<img src=https://covers.oreillystatic.com/images/0636920052289/lrg.jpg height = 500>
+
+----
+
+- Abu-Mostafa, Magdon-Ismail, Lin - Learning From Data
+
+<img src=http://amlbook.com/images/front.jpg height = 500>
+
+----
+
+- Hastie, Tibshirani, Friedman - The Elements of Statistical Learning
+
+<img src=https://web.stanford.edu/~hastie/ElemStatLearn/CoverII_small.jpg height = 500>
+
+---- 
+
+The end
