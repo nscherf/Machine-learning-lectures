@@ -93,11 +93,6 @@ Note: Today we need computerised methods for most problems, <!-- .slide: data-ba
 
 ----
 
-- Rules, Data  -> [Programming] -> Answers
-- Data, Answers -> [ML] -> Rules <!-- .element: class="fragment" -->
-
-----
-
 ## Prerequisites:
 
 - There is a pattern in the data
@@ -143,6 +138,13 @@ Note: Today we need computerised methods for most problems, <!-- .slide: data-ba
 ### automated stylised drawing
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatically-Create-Styled-Image-From-Sketch.png height>
+
+----
+
+- Machine Learning is not magic; it can't get something from nothing.
+- It is like farming: 
+	- Farmers combine seeds with nutrients to grow crops.
+	- Learners combine knowledge with data to grow programs.
 
 ---
 
@@ -240,11 +242,15 @@ Note: - response variable real-valued
 
 ## The Performance Measure, P
 
-- Describes what is a good/bad solution
-- Classification: accuracy, error rate
-- Density estimation: (log) probability of examples
-- Depends on application:
-	- what are problematic mistakes?
+- Describes what is a good/bad solution:
+	- Accuracy / Error rate
+	- Precision and Recall
+	- Squared Error
+	- Likelihood
+	- Information Gain
+	- KL Divergence
+	- Depends on application:
+		- what are problematic mistakes?
 
 
 Note: error rate = Expected 0-1 loss
@@ -356,39 +362,24 @@ Dimensionality Reduction
 
 ---
 
-## Machine Learning: The hype
+### Representation of the learning model
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Gartner_Hype_Cycle.svg" height = "400" style="background-color:white;">
-
-----
-
-### Machine Learning vs. Optimisation
-
-Fitting data (Optimisation) is different from finding patterns that generalise to unseen examples (ML).
-
-----
-
-
-Machine Learning | Statistics
----|---
-Networks, Graphs | Model
-Weights | Parameters
-Learning | Fitting
-Supervised learning | Regression/Classification
-Unsupervised learning | Density estimation, Clustering
-Large grant = $1,000,000 | Large grant = $50,000
-
-<small> *from http://statweb.stanford.edu/~tibs/stat315a/glossary.pdf* </small>
-
-----
-
-## ML vs statistics 
-
-- Breiman, Leo. 2001. “Statistical Modeling: The Two Cultures.” Statistical Science: A Review Journal of the Institute of Mathematical Statistics 16 (3) 199–231.
+- Instances
+	- kNN
+	- SVM
+- Hyperplanes
+	- Naive Bayes
+	- Logistic Regression
+- Decision Trees
+- Set of rules
+- Neural Networks
+- Graphical Models
 
 ---
 
-## Some basic concepts
+## Some useful things to know about Machine Learning*
+
+*From the paper of the same name by Pedro Domingos
 
 ----
 
