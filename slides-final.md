@@ -1,44 +1,48 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>An introduction to Machine Learning...</title>
-        <link rel="stylesheet" href="./css/reveal.css">
-        <link rel="stylesheet" href="./css/theme/black.css" id="theme">
-        <link rel="stylesheet" href="./css/highlight/zenburn.css">
-        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
-
-    </head>
-    <body>
-
-        <div class="reveal">
-            <div class="slides"><section  data-markdown><script type="text/template">
+---
+title: "An introduction to Machine Learning..."
+author: Nico Scherf
+date: Nov, 2017
+theme: black 
+---
 
 # What is Machine Learning?
-</script></section><section ><section data-markdown><script type="text/template">
+
+---
+
 <!-- .slide: data-background="https://cdn.redshift.autodesk.com/2016/05/Machine-Learning-hero.jpg" -->  
 
-<aside class="notes"><p>An integral part of Artificial Intelligence</p>
-</aside></script></section><section data-markdown><script type="text/template">
+Note: An integral part of Artificial Intelligence
+
+
+----
+
 ## AI: a long history
   
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Medeia_and_Talus.png" height=500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## AI: a long history
 
 - *The Analytical Engine has no pretensions whatever to originate anything.	It can do whatever we know how to order it to perform...* --- Ada Lovelace 1843
 
 - The Imitation Game - Alan Turing "Computing Machinery and Intelligence". Mind. 1950
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 
 AI solved problems that are intellectually difficult for humans
 
 <img src="https://images.chesscomfiles.com/uploads/v1/blog/299228.1a04250c.5000x5000o.9607e919a884.jpeg" height = 500 >
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 The true challenge: tasks that are easy for people to do but hard to describe formally 
 <img src="https://www.peonderey.com/wp-content/uploads/2016/05/13242063_10154042837576675_1639904989_o.jpg" height = 500 >
 
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - 1763 | Bayes 
 - 1913 | Markov chains
 - 1950 | Turing “Computing Machinery and Intelligence.” Mind.
@@ -49,118 +53,160 @@ The true challenge: tasks that are easy for people to do but hard to describe fo
 - 1995 | Ho - Random Forest 
 - 1995 | Cortes and Vapnik - Support Vector Machines
 - 1997 | Hochreiter and Schmidhuber - LSTM networks
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Knowledge from data
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Brahe_notebook.jpg" height=500 >
 
-<aside class="notes"><p>Tycho Brahe&#39;s careful observations were used by Kepler to derive his three laws of planetary motion</p>
-</aside></script></section><section data-markdown><script type="text/template">
+Note: Tycho Brahe's careful observations were used by Kepler to derive his three laws of planetary motion
+
+----
+
 ## Machine Learning:
 
  ...a set of methods that can **automatically detect patterns** in data, and then use the uncovered patterns to **predict future data**, or to perform other kinds of decision making under uncertainty. -- Murphy 2012, Machine Learning
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Prerequisites:
 
 - There is a pattern in the data
 - We cannot write down a mathematical model of it
 - There is (enough) data
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## But then you can do a lot...
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### colorization
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Colorization-of-Black-and-White-Photographs.png height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### detection 
 
 <img src=http://cs.stanford.edu/people/karpathy/deepimagesent/dogball.png height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### image captioning
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatic-Image-Caption-Generation.png height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### image translation
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Instant-Visual-Translation.png>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### face generation 
 
 <img src=https://camo.githubusercontent.com/d371bad7ae1f9f5bf9e0f1906e46726e503ab99d/687474703a2f2f692e696d6775722e636f6d2f45334d677a6e422e6a7067>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### automated stylised drawing
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatically-Create-Styled-Image-From-Sketch.png height>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Machine Learning is not magic; it can't get something from nothing.
 - It is like farming: 
 	- Farmers combine seeds with nutrients to grow crops.
 	- Learners combine knowledge with data to grow programs.
-</script></section></section><section  data-markdown><script type="text/template">
+
+---
+
 ## A Taxonomy
 
  A computer program is said to *learn* from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. -- Mitchell (1997). Machine Learning. 
-</script></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ## The Task, T 
 - Classification vs. Regression
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Classification
 
 - learn mapping from $\vec{x}$ to $y \in \\{ 1, ..., C \\} $
 - or probability distribution over classes
 
-<aside class="notes"><ul>
-<li>response variable y categorical<pre><code>          - C = 2 binary
-          - C &gt; 2 multiclass
-</code></pre></li>
-</ul>
-</aside></script></section><section data-markdown><script type="text/template">
+Note: - response variable y categorical
+				- C = 2 binary
+				- C > 2 multiclass 
+
+----
+
 ## Classification examples
 
 - email spam filtering,
 - object recognition / image classification:
 	- handwriting recognition,
 	- face detection. 
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 MNIST: The drosophila of Machine Learning:
 <img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/mnist.png" height=500 >
 
  
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Regression
 
 - predict numerical value
 - approximate $ y = f(\vec{x}) $ by $ \hat{y} = \hat{f}(\vec{x}) $
 
-<aside class="notes"><ul>
-<li>response variable real-valued</li>
-</ul>
-</aside></script></section><section data-markdown><script type="text/template">
+Note: - response variable real-valued 
+
+----
+
 ## Regression examples
 
 - price of item (e.g. used car) based on covariates
 - predict stock market tomorrow
 - level of biomarker given clinical measurements
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Regression examples
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Gaussian_Kernel_Regression.png" height = 300 >
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Other tasks
 
 - Structured output (a vector with relationships between elements) 
 	- translation (e.g. Klingon to French)
 - Anomaly detection (e.g. credit card fraud)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Other tasks 
 
 - Imputaton of missing values: $ p(x\_i | x\_{-i})$
 - Denoising: clean $x$ from corrupted $ \tilde{x} $: $ p(x| \widetilde{x}) $
 - Density estimation: structure $p(x)$ from data p(x)
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ## The Performance Measure, P
 - Objective/Loss functions
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## The Performance Measure, P
 
 - Describes what is a good/bad solution:
@@ -174,25 +220,33 @@ MNIST: The drosophila of Machine Learning:
 		- what are problematic mistakes?
 
 
-<aside class="notes"><p>error rate = Expected 0-1 loss</p>
-<pre><code>- e.g. regression: regular medium mistakes or rare large mistakes
-</code></pre></aside></script></section></section><section ><section data-markdown><script type="text/template">
+Note: error rate = Expected 0-1 loss
+	- e.g. regression: regular medium mistakes or rare large mistakes
+
+---
+
 ## The Experience, E
 
 - *supervised* vs *unsupervised* methods
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Supervised Learning (predictive learning)
 
 - Learn from data containing features and associated label(s) (given by an "instructor").
 - Learn mapping from features to response variable.
 - Conditional density: learn $p(\vec{y}| \vec{x})$ given $\vec{x}$ and $\vec{y}$.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Typical examples supervised learning
 
 - Regression,
 - Classification,
 - Denoising.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ## Unsupervised Learning (descriptive learning) 
 
 - Learn from unlabelled dataset:
@@ -201,8 +255,10 @@ MNIST: The drosophila of Machine Learning:
 - Unconditional density: learn $p(\vec{x})$
 	
 
-<aside class="notes"><p>Unsupervised learning might be much closer to how animals learn: &quot;When we’re learning to see, nobody’s telling us what the right answers are — we just look. Every so often, your mother says “that’s a dog”, but that’s very little information. You’d be lucky if you got a few bits of information — even one bit per second — that way. The brain’s visual system has 10^14 neural connections. And you only live for 10^9 seconds. So it’s no use learning one bit per second. You need more like 10^5 bits per second. And there’s only one place you can get that much information: from the input itself.&quot; — Geoffrey Hinton, 1996 (quoted in (Gorder 2006)).</p>
-</aside></script></section><section data-markdown><script type="text/template">
+Note: Unsupervised learning might be much closer to how animals learn: "When we’re learning to see, nobody’s telling us what the right answers are — we just look. Every so often, your mother says “that’s a dog”, but that’s very little information. You’d be lucky if you got a few bits of information — even one bit per second — that way. The brain’s visual system has 10^14 neural connections. And you only live for 10^9 seconds. So it’s no use learning one bit per second. You need more like 10^5 bits per second. And there’s only one place you can get that much information: from the input itself." — Geoffrey Hinton, 1996 (quoted in (Gorder 2006)).
+
+----
+
 
 ## Typical examples unsupervised Learning
 
@@ -211,20 +267,28 @@ MNIST: The drosophila of Machine Learning:
 - Imputation,
 - Latent factor discovery,
 - Dimensionality reduction.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 Clustering
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Sidney_Hall_-_Urania%27s_Mirror_-_Lacerta%2C_Cygnus%2C_Lyra%2C_Vulpecula_and_Anser.jpg" height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 Density Estimation
   
 <img src="https://c2.staticflickr.com/4/3258/5851679238_23b1b2bafe_b.jpg" height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 Dimensionality Reduction
 
 <img src="https://blog.sourced.tech/post/lapjv/mnist_after.png" height = "500">
 
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 
 ## Beyond (un)supervised 
 
@@ -232,13 +296,19 @@ Dimensionality Reduction
 	- only few labelled examples.
 - Multi-instance learning
 	- Collection contains example of a class or not.
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ## Reinforcement Learning
 
 - Learning successful behavioural strategies from occasional rewards.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 <iframe width="840" height="472" src="https://www.youtube.com/embed/L4KBBAwF_bE" frameborder="0" allowfullscreen></iframe>
-</script></section></section><section  data-markdown><script type="text/template">
+
+---
+
 ### Representation 
 
 - Instances
@@ -251,43 +321,59 @@ Dimensionality Reduction
 - Set of rules
 - Neural Networks
 - Graphical Models
-</script></section><section  data-markdown><script type="text/template">
+
+---
+
 ## Some useful things to know about Machine Learning*
 
 *From the paper of the same name by Pedro Domingos
-</script></section><section  data-markdown><script type="text/template">
+
+---
+
 ### Generalisation counts
 
 - Fundamental goal is to generalize to **unseen** data
 - Split data into training and test set
 - Never touch the test set !
-</script></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ### Data alone is not enough
 
 >  "Even after the observation of the frequent conjunction of objects, we have no reason to draw any inference concerning any object beyond those of which we have had experience." --- Hume, A treatise of Human Nature, Book I, part 3, sec 12
 
 - The "No free lunch" theorem by Wolpert 
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Boolean function of 100 variables and a million examples:
 - $2^{100} - 10^6$ unknown examples remain,
 - without prior knowledge, do coin flipping.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - The functions we are interested in are not drawn randomly from the space of all possible functions!
 - We use some general assumptions:
 	- Smoothness,
 	- Similar examples have similar classes,
 	- Limited complexity,
 	- limited dependence.
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ### Overfitting has many faces
 
 - If we model every minute variation in the training data, we are likely to fit the noise as well.
 - perfect fit of training data = bad generalisation to unseen data
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Error decomposes into bias and variance
 	- Bias: the tendency to consistently learn the wrong thing.
 	- Variance: the tendency to learn random things irrespective of real signal
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 
 <img src=https://i.stack.imgur.com/8RlJk.png>
 
@@ -296,7 +382,9 @@ Dimensionality Reduction
 - find the optimal trade-off
 	- cross-validation (training, validation set)
 	- use regularisation
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### keep in mind: 
 
 - We split the data into: 
@@ -304,48 +392,62 @@ Dimensionality Reduction
 	- (Validation set)
 	- **Test set (never touch!)**
 		- typical split: 80/20
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 
 ### Intuition fails in high dimensions
 
 - *The curse of dimensionality* (Bellman 1961)
 - Sampling becomes exponentially harder:
 	- In $D=100$, $10^{12}$ samples cover only a fraction of $10^{-18}$ of the input space
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Similarity-based reasoning breaks down in high dimensional space.
 	- (Euclidean) distances become meaningless
 - Most of the volume of a high-dimensional orange is in the skin, not the pulp.
 
 <img src=https://c.pxhere.com/photos/05/79/agriculture_background_citrus_close_up_color_dessert_diet_drop-1112919.jpg!d height = 200>
 
-<aside class="notes"><p>-Number of nearest neighbours increases until choice of NN is effectively random</p>
-<ul>
-<li>Most of the mass of a multivariate Gaussian is not near the mean but in a distant shell</li>
-</ul>
-</aside></script></section><section data-markdown><script type="text/template">
+Note: -Number of nearest neighbours increases until choice of NN is effectively random
+- Most of the mass of a multivariate Gaussian is not near the mean but in a distant shell
+
+----
+
 - **BUT**: The data is usually not uniformly distributed in the embedding space. It forms a structured subset (a manifold)!
 	- The "blessing of non-uniformity".
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ### More data beats clever algorithm
 
 - The quickest path to success: just get more data.
 - A dumb algorithm with lots of data is better than a clever one with modest amounts of it.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Rule of thumb: try the simpler methods first!
 	- Naive Bayes before Logistic Regression
 	- kNN before SVM
 	- Everything else before Deep Learning
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 
 - Labeled data is often scarce and costly to obtain:
 	- That is why unsupervised learning is so interesting.
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ### Parametric vs. Non-parametric
 
 - Learners can be divided into those where:
 	- Representation size is fixed (parametric)
 	- Representation grows with data (non-parametric)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 
 ### K-nearest neighbours
 
@@ -353,7 +455,9 @@ Dimensionality Reduction
 
 - Guaranteed nearly optimal error rate (for $\infty $ data)
 - Computation time scales with the size data
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 
 ### Parametric models
 
@@ -361,14 +465,18 @@ Dimensionality Reduction
 - Parametric models:
 	- fast to compute,
 	- strong assumptions.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### Parametric models: regression
 
 - linear regression: 
 	- $y(x,w) = w_0 + w_1 x_1 + ... + w_D x_D$
 
 <img src=https://cdn-images-1.medium.com/max/600/1*iuqVEjdtEMY8oIu3cGwC1g.png height = 400 style="background-color:white;">
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### Parametric models: classification
 
 - logistic regression:
@@ -376,7 +484,9 @@ Dimensionality Reduction
 	- $ y(\Phi) = \sigma (\vec{w}^T \Phi)$
 
 <img src=http://www.saedsayad.com/images/LogReg_1.png>
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 
 ### Feature engineering is key
 
@@ -386,12 +496,16 @@ Dimensionality Reduction
 	- predict the value of N target values
 
 <img src=https://i.stack.imgur.com/VZtEr.jpg height = 200>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Raw data often not useful to learn a task
 - Ideal features are  independent and correlate well with the target.
 	- How to find them is a 'black art'.
 - Deep Learning methods extract the features themselves from the raw data.
-</script></section></section><section  data-markdown><script type="text/template">
+
+---
+
 ### Learn many models, not just one
 
 - Train and combine variations of the learner.
@@ -401,8 +515,10 @@ Dimensionality Reduction
 	- Stacking: learn to combine output of lower level.
 - Netflix prize: stacked ensembles of over 100 methods. 
 
-<aside class="notes"><p>by how often the previous learner got them wrong</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+Note: by how often the previous learner got them wrong
+
+---
+
 
 ### Representable $\neq$ learnable
 
@@ -410,15 +526,21 @@ Dimensionality Reduction
 - Just because a function can be represented it doesn't mean it can be learned.
 - Some models are exponentially more compact:
 	- Deep Learning.
-</script></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ### Correlation does not imply causation
 
 - Machine Learning is done on *observational* data.
 - Predictive variables can only be controlled in *experimental* data.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 
 # Quick Summary
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Basic concepts:
 	- Supervised, Unsupervised
 	- Classification, Regression
@@ -426,86 +548,47 @@ Dimensionality Reduction
 	- Features
 	- Generalisation, Overfitting, Underfitting
 	- Training set, Validation set, Test set
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 # books 
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Bishop - Pattern Recognition and Machine Learning
 
 <img src=https://www.microsoft.com/en-us/research/wp-content/uploads/2016/06/Springer-Cover-Image.jpg height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Murphy - Machine Learning: A Probabilistic Perspective
 
 <img src=https://mitpress.mit.edu/sites/default/files/9780262018029.jpg height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Goodfellow, Bengio, Courville - Deep Learning
 
 <img src=https://images.gr-assets.com/books/1478212695l/30422361.jpg height = 400>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Geron - Hands-on Machine Learning
 
 <img src=https://covers.oreillystatic.com/images/0636920052289/lrg.jpg height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Abu-Mostafa, Magdon-Ismail, Lin - Learning From Data
 
 <img src=http://amlbook.com/images/front.jpg height = 500>
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 - Hastie, Tibshirani, Friedman - The Elements of Statistical Learning
 
 <img src=https://web.stanford.edu/~hastie/ElemStatLearn/CoverII_small.jpg height = 500>
 
 ---- 
 
-The end</script></section></section></div>
-        </div>
-
-        <script src="./lib/js/head.min.js"></script>
-        <script src="./js/reveal.js"></script>
-
-        <script>
-            function extend() {
-              var target = {};
-              for (var i = 0; i < arguments.length; i++) {
-                var source = arguments[i];
-                for (var key in source) {
-                  if (source.hasOwnProperty(key)) {
-                    target[key] = source[key];
-                  }
-                }
-              }
-              return target;
-            }
-
-            // Optional libraries used to extend on reveal.js
-            var deps = [
-              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
-              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-              { src: './plugin/zoom-js/zoom.js', async: true },
-              { src: './plugin/notes/notes.js', async: true },
-              { src: './plugin/math/math.js', async: true }
-            ];
-
-            // default options to init reveal.js
-            var defaultOptions = {
-              controls: true,
-              progress: true,
-              history: true,
-              center: true,
-              transition: 'default', // none/fade/slide/convex/concave/zoom
-              dependencies: deps
-            };
-
-            // options from URL query string
-            var queryOptions = Reveal.getQueryHash() || {};
-
-            var options = {};
-            options = extend(defaultOptions, options, queryOptions);
-        </script>
-
-
-        <script>
-            Reveal.initialize(options);
-        </script>
-    </body>
-</html>
+The end
