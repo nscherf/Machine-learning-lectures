@@ -165,6 +165,10 @@ Note: - response variable y categorical
 
 ----
 
+<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Kernel_Machine.svg/1200px-Kernel_Machine.svg.png style="background-color:white;">
+
+----
+
 ## Classification examples
 
 - email spam filtering,
@@ -177,8 +181,6 @@ Note: - response variable y categorical
 MNIST: The drosophila of Machine Learning:
 <img src="https://raw.github.com/nscherf/01-ML-introduction/gh-pages/img/mnist.png" height=500 >
 
- 
-
 ----
 
 ## Regression
@@ -190,6 +192,12 @@ Note: - response variable real-valued
 
 ----
 
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Gaussian_Kernel_Regression.png" height = 300 >
+
+
+----
+
 ## Regression examples
 
 - price of item (e.g. used car) based on covariates
@@ -198,17 +206,13 @@ Note: - response variable real-valued
 
 ----
 
-## Regression examples
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Gaussian_Kernel_Regression.png" height = 300 >
-
-----
 
 ## Other tasks
 
 - Structured output (a vector with relationships between elements) 
 	- translation (e.g. Klingon to French)
 - Anomaly detection (e.g. credit card fraud)
+- Density estimation: structure $p(x)$ from data
 
 ----
 
@@ -216,7 +220,8 @@ Note: - response variable real-valued
 
 - Imputaton of missing values: $ p(x\_i | x\_{-i})$
 - Denoising: clean $x$ from corrupted $ \tilde{x} $: $ p(x| \widetilde{x}) $
-- Density estimation: structure $p(x)$ from data
+
+<img src = https://ars.els-cdn.com/content/image/1-s2.0-S1047320317301803-gr1.jpg>
 
 ---
 
