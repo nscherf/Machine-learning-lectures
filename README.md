@@ -3,14 +3,13 @@ Before we start...
 
 - 30 min theory, 30 min Python notebook hacking
 - first 3 or 4 weeks theory only
-- no course on Nov 15th
 
 ## Outline of course
 
 1. Introduction: What is Machine Learning? 
 2. Mathematical Background 
-3. Python: Introduction to Python for Machine Learning
-4. Machine Learning Basics revisited
+3. Machine Learning Basics revisited
+4. Python: Introduction to Python for Machine Learning
 5. Regression
 6. Classification 
 8. SVMs and Kernel methods
