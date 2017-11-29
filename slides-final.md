@@ -16,13 +16,24 @@ Note: An integral part of Artificial Intelligence
 
 ----
 
-## AI: a long history
+### TOC
+
+- Part I
+	- Historical note
+	- Definition(s) of Machine Learning
+		- A taxonomy of different aspects of Machine Learning
+- Part II
+	- A few useful things to know about Machine Learning
+
+----
+
+### The idea of AI has a long history...
   
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Medeia_and_Talus.png" height=500>
 
 ----
 
-## AI: a long history
+### The idea of AI has a long history...
 
 - *The Analytical Engine has no pretensions whatever to originate anything.	It can do whatever we know how to order it to perform...* --- Ada Lovelace 1843
 
@@ -43,6 +54,11 @@ The true challenge: tasks that are easy for people to do but hard to describe fo
 
 ----
 
+- Solving a visual pattern recognition problem is hard by using prescribed rules: Think about how to detect a handwritten number...
+- This is where Machine Learning came into play...
+
+----
+
 - 1763 | Bayes 
 - 1913 | Markov chains
 - 1950 | Turing “Computing Machinery and Intelligence.” Mind.
@@ -56,9 +72,11 @@ The true challenge: tasks that are easy for people to do but hard to describe fo
 
 ----
 
-## Knowledge from data
+### Knowledge from data
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Brahe_notebook.jpg" height=500 >
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Brahe_notebook.jpg" height=400 >
+
+Tycho Brahe's observations were turned into laws of planetary motion by Kepler.
 
 Note: Tycho Brahe's careful observations were used by Kepler to derive his three laws of planetary motion
 
@@ -73,8 +91,8 @@ Note: Tycho Brahe's careful observations were used by Kepler to derive his three
 ## Prerequisites:
 
 - There is a pattern in the data
-- We cannot write down a mathematical model of it
 - There is (enough) data
+- We do not have a mathematical model
 
 ----
 
@@ -82,37 +100,37 @@ Note: Tycho Brahe's careful observations were used by Kepler to derive his three
 
 ----
 
-### colorization
+### Colorization
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Colorization-of-Black-and-White-Photographs.png height = 500>
 
 ----
 
-### detection 
+### Detection 
 
 <img src=http://cs.stanford.edu/people/karpathy/deepimagesent/dogball.png height = 500>
 
 ----
 
-### image captioning
+### Image captioning
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatic-Image-Caption-Generation.png height = 500>
 
 ----
 
-### image translation
+### Image translation
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Instant-Visual-Translation.png>
 
 ----
 
-### face generation 
+### Face generation 
 
 <img src=https://camo.githubusercontent.com/d371bad7ae1f9f5bf9e0f1906e46726e503ab99d/687474703a2f2f692e696d6775722e636f6d2f45334d677a6e422e6a7067>
 
 ----
 
-### automated stylised drawing
+### Automated stylised drawing
 
 <img src=https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Automatically-Create-Styled-Image-From-Sketch.png height>
 
@@ -198,7 +216,7 @@ Note: - response variable real-valued
 
 - Imputaton of missing values: $ p(x\_i | x\_{-i})$
 - Denoising: clean $x$ from corrupted $ \tilde{x} $: $ p(x| \widetilde{x}) $
-- Density estimation: structure $p(x)$ from data p(x)
+- Density estimation: structure $p(x)$ from data
 
 ---
 
@@ -309,7 +327,7 @@ Dimensionality Reduction
 
 ---
 
-### Representation 
+### Many different representations...
 
 - Instances
 	- kNN
@@ -332,13 +350,15 @@ Dimensionality Reduction
 
 ### Generalisation counts
 
-- Fundamental goal is to generalize to **unseen** data
-- Split data into training and test set
-- Never touch the test set !
+- Fundamental goal is to generalise to **unseen** data, not a perfect fit to the training data. 
+- There are (loose) theoretical bounds (e.g. VC dimension).
+- The empirical way:
+	- Split data into training and test set
+	- Never touch the test set !
 
 ---
 
-### Data alone is not enough
+### Data alone is not enough: The problem with induction
 
 >  "Even after the observation of the frequent conjunction of objects, we have no reason to draw any inference concerning any object beyond those of which we have had experience." --- Hume, A treatise of Human Nature, Book I, part 3, sec 12
 
@@ -352,12 +372,12 @@ Dimensionality Reduction
 
 ----
 
-- The functions we are interested in are not drawn randomly from the space of all possible functions!
+- The functions we are interested in are not drawn randomly from the space of all possible functions...
 - We use some general assumptions:
 	- Smoothness,
 	- Similar examples have similar classes,
-	- Limited complexity,
-	- limited dependence.
+	- Limited complexity or dependence.
+- We can always infer something in a **probabilistic sense**.
 
 ---
 
@@ -522,10 +542,11 @@ Note: by how often the previous learner got them wrong
 
 ### Representable $\neq$ learnable
 
-- "Multilayer Perceptron is a universal function approximatior".
-- Just because a function can be represented it doesn't mean it can be learned.
-- Some models are exponentially more compact:
-	- Deep Learning.
+- "Multilayer Perceptron is a universal function approximator".
+- Just because a function can be represented it doesn't mean it can be learned in practice.
+- Some models are exponentially more compact/ efficient:
+	- Deep Learning,
+	- Capsule Networks.
 
 ---
 
@@ -537,7 +558,7 @@ Note: by how often the previous learner got them wrong
 ----
 
 
-# Quick Summary
+# Summary
 
 ----
 
