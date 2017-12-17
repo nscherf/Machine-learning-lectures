@@ -1,4 +1,3 @@
-Before we start... 
 # organisational stuff
 
 - 30 min theory, 30 min Python notebook hacking
@@ -33,3 +32,10 @@ Before we start...
 - [5] (Artificial Intelligence: A modern approach - Russel, Norvig)
 - [6] Introduction to Machine Learning - Alpaydin
 
+----
+
+# interesting links:
+
+[*The wonderful and terrifying implications of computers that can learn*](https://www.youtube.com/watch?v=t4kyRyKyOpo)
+
+[*Yann LeCun - Power & Limits of Deep Learning*](https://www.youtube.com/watch?v=0tEhw5t6rhc)
