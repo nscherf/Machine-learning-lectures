@@ -40,4 +40,4 @@
 
 [*Yann LeCun - Power & Limits of Deep Learning*](https://www.youtube.com/watch?v=0tEhw5t6rhc)
 
-[*Artificial Intelligence Augmentation*] (https://distill.pub/2017/aia/)
+[*Artificial Intelligence Augmentation*](https://distill.pub/2017/aia/)
