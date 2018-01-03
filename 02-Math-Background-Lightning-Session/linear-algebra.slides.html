@@ -11859,10 +11859,13 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linear-Algebra">Linear Algebra<a class="anchor-link" href="#Linear-Algebra">&#182;</a></h2><ul>
-<li>Scalars, Vectors, Matrices (and Tensors)</li>
+<h1 id="Linear-Algebra">Linear Algebra<a class="anchor-link" href="#Linear-Algebra">&#182;</a></h1><ul>
+<li>What and why? </li>
+<li>Scalars, Vectors, Matrices </li>
+<li>Systems of Linear Equations</li>
+<li>The Transpose</li>
+<li>Matrix operations</li>
 <li>Multiplying Matrices and Vectors</li>
-<li>Identity and Inverse Matrices</li>
 <li>Linear Dependence and Span</li>
 <li>Norms</li>
 <li>Special Kinds of Matrices and Vectors</li>
@@ -11871,6 +11874,7 @@ a.anchor-link {
 <li>The Moore-Penrose Pseudoinverse</li>
 <li>The Trace Operator</li>
 <li>The Determinant</li>
+<li>final note: Tensors</li>
 <li>(Example: PCA)</li>
 </ul>
 
@@ -11889,15 +11893,23 @@ a.anchor-link {
 <li>their representations through matrices and vector spaces</li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>maybe the most important basis for applied mathematics<ul>
 <li>geometry, compute graphics,</li>
-<li>functional analysis,</li>
 <li>engineering,</li>
 <li>quantum mechanics,</li>
 <li>Fourier series,</li>
 <li>statistics, </li>
-<li>least squares,</li>
-<li>anything multi-dimensional</li>
 <li>linearization of nonlinear systems</li>
 </ul>
 </li>
@@ -11912,16 +11924,14 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="History">History<a class="anchor-link" href="#History">&#182;</a></h2><ul>
-<li>from the study of determinants to solve systems of linear equations<ul>
+<li>from the study of determinants to solve systems of linear equations</li>
 <li>Leibniz 1693</li>
 <li>Cramer 1750</li>
 <li>Gauss</li>
 <li>Grassman 1844</li>
-<li>Sylvester 1848, the term matrix</li>
-<li>Pasha 1882, the first book on 'linear algebra'</li>
-<li>Peano 1888, vector spaces</li>
-</ul>
-</li>
+<li>Sylvester 1848, introduced the term <em>matrix</em></li>
+<li>Pasha 1882, the first book on <em>linear algebra</em></li>
+<li>Peano 1888, <em>vector spaces</em></li>
 </ul>
 
 </div>
@@ -11955,9 +11965,8 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Vectors">Vectors<a class="anchor-link" href="#Vectors">&#182;</a></h2><ul>
 <li>an array of numbers, arranged in order</li>
-<li>elements identified by its index</li>
 <li>typically written as $\vec{x}$ or $\mathbf{x}$</li>
-<li>n elements, each a real number, then $\mathbf{x} \in \mathbb{R} ^n$</li>
+<li>n real elements then $\mathbf{x} \in \mathbb{R} ^n$</li>
 <li>$ \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$</li>
 <li>think of vectors as identifying points in n-dimensional space<ul>
 <li>each element giving the coordinate along an axis (dimension)</li>
@@ -11973,24 +11982,33 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="vector-addition">vector addition<a class="anchor-link" href="#vector-addition">&#182;</a></h3><ul>
-<li>"you can't add apples to oranges</li>
+<h3 id="Adding-Vectors">Adding Vectors<a class="anchor-link" href="#Adding-Vectors">&#182;</a></h3><ul>
+<li>"you can't add apples to oranges"</li>
 <li>but you can add the vectors, the components stay separate<ul>
 <li>$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}$ and $\mathbf{w} = \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$ add to $\mathbf{v} + \mathbf{w}= \begin{bmatrix} v_1 + w_1 \\ v_2 + w_2 \end{bmatrix}$</li>
-<li>add apples to apples and oranges to oranges</li>
 </ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="scalar-multiplication">scalar multiplication<a class="anchor-link" href="#scalar-multiplication">&#182;</a></h3><ul>
+<p><img src="img/add-apples-and-oranges.png" alt="add apples to apples and oranges to oranges"></p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Scalar-Multiplication">Scalar Multiplication<a class="anchor-link" href="#Scalar-Multiplication">&#182;</a></h3><ul>
 <li>the second important operation for vectors</li>
 <li>we multiply each component (again) by a scalar value<ul>
 <li>$2\mathbf{v}=  \begin{bmatrix} 2 v_1 \\  2 v_2 \end{bmatrix} $ or:  $-\mathbf{v}=  \begin{bmatrix} - v_1 \\  - v_2 \end{bmatrix} $</li>
@@ -12006,7 +12024,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="linear-combinations">linear combinations<a class="anchor-link" href="#linear-combinations">&#182;</a></h3><ul>
+<h3 id="Linear-Combinations">Linear Combinations<a class="anchor-link" href="#Linear-Combinations">&#182;</a></h3><ul>
 <li>Linear algebra is built on these two operations (hence the name linear).</li>
 <li>we can form <em>linear combinations</em> by multiplying vectors with scalars and adding the results:<ul>
 <li>$c\mathbf{v}+d\mathbf{w}$ is the prototypic linear combination<ul>
@@ -12029,7 +12047,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="representations">representations<a class="anchor-link" href="#representations">&#182;</a></h3><ul>
+<h3 id="Representing-Vectors">Representing Vectors<a class="anchor-link" href="#Representing-Vectors">&#182;</a></h3><ul>
 <li>as two numbers (or n numbers in n-dimensional space)</li>
 <li>as an arrow from the origin</li>
 <li>as a point in the plane (or n-dimensional space)</li>
@@ -12043,11 +12061,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="key-ideas">key ideas<a class="anchor-link" href="#key-ideas">&#182;</a></h3><ul>
-<li>a vector in 2D has two components<ul>
-<li>replace 2 by n for generic nD case</li>
-</ul>
-</li>
+<h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
+<li>a vector in n dimensions has n components</li>
 <li>$\mathbf{v}+\mathbf{w}=(v_1+v_2, w_1+w_2)$ and $c\mathbf{v}=(c v_1, c v_2)$: one component at a time!</li>
 <li>linear combination of three vectors is: $c \mathbf{u}+ d\mathbf{v}+e\mathbf{w}$</li>
 <li>all combinations of three (independent) vectors fill the whole $\mathbb{R}^3$</li>
@@ -12061,11 +12076,35 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="lengths,-angles,-and-the-dot-(inner)-product">lengths, angles, and the dot (inner) product<a class="anchor-link" href="#lengths,-angles,-and-the-dot-(inner)-product">&#182;</a></h3><ul>
+<h3 id="Lengths,-Angles,-and-the-Dot-(inner)-Product">Lengths, Angles, and the Dot (inner) Product<a class="anchor-link" href="#Lengths,-Angles,-and-the-Dot-(inner)-Product">&#182;</a></h3><ul>
 <li>in 2D: between vectors $x$ and $y$ of the same dimensionality: $v \cdot w = v_1 w_1 + v_2 w_2$<ul>
 <li>commutative: the order doesn't matter</li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://betterexplained.com/wp-content/uploads/dotproduct/dot_product_components.png" alt="source: betterexplained.com/"></p>
+<ul>
+<li>source: betterexplained.com/</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>defines length, angle of vectors<ul>
 <li>length of $\mathbf{v}$ is square root of inner product of $\mathbf{v}$ with itself: $\lVert \mathbf{v} \rVert = \sqrt{\mathbf{v} \cdot \mathbf{v}} $</li>
 </ul>
@@ -12078,14 +12117,15 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[191]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">v</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;v: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;length of v: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">v</span><span class="p">))))</span>
 </pre></div>
 
 </div>
@@ -12100,7 +12140,8 @@ a.anchor-link {
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.41421356237
+<pre>v: [1 1]
+length of v: 1.41421356237
 </pre>
 </div>
 </div>
@@ -12111,14 +12152,16 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[190]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">norm_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">v</span> <span class="o">/</span> <span class="n">norm_v</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">u</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;v: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;length of v: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">norm_v</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;unit vector in direction of v: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;length of unit vector: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">u</span><span class="p">))))</span>
 </pre></div>
 
 </div>
@@ -12133,8 +12176,10 @@ a.anchor-link {
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[ 0.70710678  0.70710678]
-1.0
+<pre>v: [1 1]
+length of v: 1.41421356237
+unit vector in direction of v: [ 0.70710678  0.70710678]
+length of unit vector: 1.0
 </pre>
 </div>
 </div>
@@ -12157,7 +12202,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[192]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
@@ -12172,7 +12217,7 @@ a.anchor-link {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[192]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -12192,7 +12237,21 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>more generally, if $\mathbf{v}$ and $\mathbf{w}$ are nonzero vectors: $$\frac{\mathbf{v}\cdot \mathbf{w}}{\lVert \mathbf{v} \rVert \lVert \mathbf{w} \rVert} = \cos \theta$$</li>
+<li>more generally, if $\mathbf{v}$ and $\mathbf{w}$ are nonzero vectors: <ul>
+<li>$\frac{\mathbf{v}\cdot \mathbf{w}}{\lVert \mathbf{v} \rVert \lVert \mathbf{w} \rVert} = \cos \theta$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>instead of $\begin{bmatrix} v_1 \\ v_2 \end{bmatrix} \cdot \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$ we often write $\begin{bmatrix} v_1 & v_2 \end{bmatrix} \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$, i.e. $\mathbf{v}^\top \mathbf{w}$, hence the name: <em>inner product</em>.</li>
 </ul>
 
@@ -12204,7 +12263,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="key-ideas">key ideas<a class="anchor-link" href="#key-ideas">&#182;</a></h3><ul>
+<h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
 <li>dot (inner) product multiplies each component and adds the results</li>
 <li>length of a vector is the square root of the dot product with itself</li>
 <li>a vector divided by its length gives the unit vector in the same direction</li>
@@ -12526,7 +12585,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="matrix-and-vector-products">matrix and vector products<a class="anchor-link" href="#matrix-and-vector-products">&#182;</a></h2><h3 id="matrix-matrix-products">matrix matrix products<a class="anchor-link" href="#matrix-matrix-products">&#182;</a></h3><ul>
+<h2 id="Multiplying-Matrices-and-Vectors">Multiplying Matrices and Vectors<a class="anchor-link" href="#Multiplying-Matrices-and-Vectors">&#182;</a></h2><h3 id="matrix-matrix-products">matrix matrix products<a class="anchor-link" href="#matrix-matrix-products">&#182;</a></h3><ul>
 <li>$\mathbf{C}=\mathbf{A}\mathbf{B}$, defined only if $\mathbf{A}$ has as many columns as $\mathbf{B}$ has rows</li>
 <li>$\mathbf{A} \in \mathbb{R}^{m \times n}$, $\mathbf{B} \in \mathbb{R}^{n \times p}$, then $\mathbf{C} \in \mathbb{R}^{m \times p}$:<ul>
 <li>$C_{i,j}=\sum_{k} A_{i,k} B_{k,j}$</li>
