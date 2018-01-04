@@ -36,7 +36,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -11854,8 +11854,7 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 <section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11880,8 +11879,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11897,19 +11895,19 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>maybe the most important basis for applied mathematics<ul>
-<li>geometry, compute graphics,</li>
-<li>engineering,</li>
-<li>quantum mechanics,</li>
+<li>Geometry, Computer Graphics,</li>
+<li>Engineering,</li>
+<li>Quantum mechanics,</li>
 <li>Fourier series,</li>
-<li>statistics, </li>
-<li>linearization of nonlinear systems</li>
+<li>Statistics, </li>
+<li>Linearization of nonlinear systems</li>
+<li><strong>Machine Learning</strong></li>
 </ul>
 </li>
 </ul>
@@ -11917,8 +11915,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11936,8 +11933,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11945,20 +11941,18 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Scalars">Scalars<a class="anchor-link" href="#Scalars">&#182;</a></h2><ul>
-<li>a single number, e.g. $a \in \mathbb{R}$</li>
+<li>just a single number, e.g. $a \in \mathbb{R}$</li>
 </ul>
 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11967,6 +11961,7 @@ a.anchor-link {
 <li>typically written as $\vec{x}$ or $\mathbf{x}$</li>
 <li>n real elements then $\mathbf{x} \in \mathbb{R} ^n$</li>
 <li>$ \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$</li>
+<li>needs <em>one</em> index to specify an element</li>
 <li>think of vectors as identifying points in n-dimensional space<ul>
 <li>each element giving the coordinate along an axis (dimension)</li>
 </ul>
@@ -11976,13 +11971,12 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Adding-Vectors">Adding Vectors<a class="anchor-link" href="#Adding-Vectors">&#182;</a></h3><ul>
-<li>"you can't add apples to oranges"</li>
+<li>"you can't add apples to oranges" [Strang]</li>
 <li>but you can add the vectors, the components stay separate<ul>
 <li>$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}$ and $\mathbf{w} = \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$ add to $\mathbf{v} + \mathbf{w}= \begin{bmatrix} v_1 + w_1 \\ v_2 + w_2 \end{bmatrix}$</li>
 </ul>
@@ -11992,8 +11986,7 @@ a.anchor-link {
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12002,8 +11995,7 @@ a.anchor-link {
 </div>
 </div>
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12018,8 +12010,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12041,8 +12032,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12055,8 +12045,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12070,8 +12059,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12084,22 +12072,8 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://betterexplained.com/wp-content/uploads/dotproduct/dot_product_components.png" alt="source: betterexplained.com/"></p>
-<ul>
-<li>source: betterexplained.com/</li>
-</ul>
-
-</div>
-</div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12136,7 +12110,9 @@ a.anchor-link {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>v: [1 1]
@@ -12172,7 +12148,9 @@ length of v: 1.41421356237
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>v: [1 1]
@@ -12187,8 +12165,7 @@ length of unit vector: 1.0
 </div>
 
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12216,7 +12193,9 @@ length of unit vector: 1.0
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[17]:</div>
+
 
 
 
@@ -12230,8 +12209,7 @@ length of unit vector: 1.0
 </div>
 
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12245,20 +12223,30 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://betterexplained.com/wp-content/uploads/dotproduct/dot_product_components.png" alt="source: betterexplained.com/"></p>
 <ul>
-<li>instead of $\begin{bmatrix} v_1 \\ v_2 \end{bmatrix} \cdot \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$ we often write $\begin{bmatrix} v_1 & v_2 \end{bmatrix} \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$, i.e. $\mathbf{v}^\top \mathbf{w}$, hence the name: <em>inner product</em>.</li>
+<li>source: betterexplained.com/</li>
 </ul>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>instead of $\begin{bmatrix} v_1 \\ v_2 \end{bmatrix} \cdot \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$ we often write $\begin{bmatrix} v_1 &amp; v_2 \end{bmatrix} \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$, i.e. $\mathbf{v}^\top \mathbf{w}$, hence the name: <em>inner product</em>.</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12273,24 +12261,40 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Matrices">Matrices<a class="anchor-link" href="#Matrices">&#182;</a></h2><ul>
-<li>a 2D array of numbers, needs two indices to identify member</li>
+<li>a 2D array of numbers</li>
 <li>upper-case variables $\mathbf{A}$</li>
 <li>real-valued, $m$ rows and $n$ columns, then $\mathbf{A} \in \mathbb{R}^{m \times n} $</li>
-<li>a specific element $A_{i,j}$</li>
-<li>$ \mathbf{A} = \begin{bmatrix} a_{1,1} & a_{1,2}  \\ a_{2,1} & a_{2,2} \\ a_{3,1} & a_{3,2} \end{bmatrix}$</li>
+<li>a specific element $A_{i,j}$ <ul>
+<li>needs <em>two indices</em> to identify member</li>
+</ul>
+</li>
+<li>$ \mathbf{A} = \begin{bmatrix} a_{1,1} &amp; a_{1,2}  \\ a_{2,1} &amp; a_{2,2} \\ a_{3,1} &amp; a_{3,2} \end{bmatrix}$</li>
 </ul>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Multiplying-Matrices-and-Vectors">Multiplying Matrices and Vectors<a class="anchor-link" href="#Multiplying-Matrices-and-Vectors">&#182;</a></h3><ul>
+<li>$\mathbf{y}=\mathbf{A}\mathbf{x}$, $\mathbf{A} \in \mathbb{R}^{m \times n}$, $\mathbf{x} \in \mathbb{R}^{n \times 1}$, then $\mathbf{y} \in \mathbb{R}^{m \times 1}$:<ul>
+<li>$y_{i,1}=\sum_{k} A_{i,k} x_{k,1}$</li>
+</ul>
+</li>
+<li>y is a linear combination of A's columns (weights defined by x)</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12298,7 +12302,7 @@ length of unit vector: 1.0
 <li>$u = \begin{bmatrix} 1 \\ -1 \\ 0\end{bmatrix}, v = \begin{bmatrix} 0 \\ 1 \\ -1\end{bmatrix}, w = \begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix}$ </li>
 <li>the combination $c\mathbf{u} + d\mathbf{v} + e\mathbf{w} = \begin{bmatrix}c \\d-c \\ e-d \end{bmatrix}$</li>
 <li>let's rewrite (stack) the vectors into matrix and multiply with the vector of the coefficients: <ul>
-<li>$ \begin{bmatrix}1 & 0 & 0  \\ -1 & 1 & 0 \\ 0 & -1 & 1 \end{bmatrix} \begin{bmatrix}c \\d \\ e \end{bmatrix} = \begin{bmatrix}c \\d-c \\ e-d \end{bmatrix}$</li>
+<li>$ \begin{bmatrix}1 &amp; 0 &amp; 0  \\ -1 &amp; 1 &amp; 0 \\ 0 &amp; -1 &amp; 1 \end{bmatrix} \begin{bmatrix}c \\d \\ e \end{bmatrix} = \begin{bmatrix}c \\d-c \\ e-d \end{bmatrix}$</li>
 </ul>
 </li>
 </ul>
@@ -12306,8 +12310,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12327,12 +12330,11 @@ length of unit vector: 1.0
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\begin{bmatrix} 1 & 2  \\ 3 & 4 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 2 \end{bmatrix} $</p>
+<p>$\begin{bmatrix} 1 &amp; 2  \\ 3 &amp; 4 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 2 \end{bmatrix} $</p>
 
 </div>
 </div>
@@ -12354,7 +12356,9 @@ length of unit vector: 1.0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[[ 5]
@@ -12367,8 +12371,7 @@ length of unit vector: 1.0
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12388,21 +12391,19 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Identity-Matrix">Identity Matrix<a class="anchor-link" href="#Identity-Matrix">&#182;</a></h3><ul>
 <li>$\mathbf{I}_n\mathbf{x}=\mathbf{x}$, $\forall \mathbf{x}\in\mathbb{R}^n$ </li>
-<li>so in 2D: $\mathbf{I}_2=\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$</li>
+<li>so in 2D: $\mathbf{I}_2=\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}$</li>
 </ul>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12414,8 +12415,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12426,8 +12426,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12438,8 +12437,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12450,8 +12448,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12466,8 +12463,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12481,8 +12477,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12492,7 +12487,7 @@ length of unit vector: 1.0
 <li>the columns become the rows</li>
 </ul>
 </li>
-<li>vectors can be seen as 1D matrices, i.e:  $\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ can be written as $\begin{bmatrix} x_1 & x_2 & x_3 \end{bmatrix}^\top$ </li>
+<li>vectors can be seen as 1D matrices, i.e:  $\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ can be written as $\begin{bmatrix} x_1 &amp; x_2 &amp; x_3 \end{bmatrix}^\top$ </li>
 <li>a scalar is a 1x1 matrix, i.e. $a^\top = a $ </li>
 </ul>
 
@@ -12517,7 +12512,9 @@ length of unit vector: 1.0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[[1 2 3]
@@ -12547,7 +12544,9 @@ length of unit vector: 1.0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[[1 4]
@@ -12561,18 +12560,35 @@ length of unit vector: 1.0
 </div>
 
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>that explains the meaning of inner products:<ul>
+<li>$\mathbf{A}\mathbf{x}$ combines the columns of A while $\mathbf{x^\top}\mathbf{A^\top}$ combines the rows of $\mathbf{A^\top}$: <ul>
+<li>the same combination of the same vectors!</li>
+</ul>
+</li>
+<li>more mathematically speaking: $\mathbf{A^\top}$ is the matrix that makes those two products equal for every x and y:<ul>
+<li>$(\mathbf{A}\mathbf{x})^\top \mathbf{y} = \mathbf{x}^\top (\mathbf{A}^\top \mathbf{y})$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>that explains the name "inner products":<ul>
 <li>$^\top$ inside: the dot or inner product: $\mathbf{x}^\top \mathbf{y}, (1 \times n)(n \times 1)$</li>
 <li>$^\top$ outside: the rank or outer product: $\mathbf{x}\mathbf{y}^\top, (n \times 1)(1 \times n)$</li>
 </ul>
 </li>
-<li>'real' examples of inner products:<ul>
+<li>Inner products are everywhere...<ul>
 <li>work = movements forces $= \mathbf{x}^\top \mathbf{f}$</li>
 <li>income = quantities prices $= \mathbf{q}^\top \mathbf{p}$</li>
 </ul>
@@ -12582,8 +12598,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12598,8 +12613,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12613,8 +12627,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12629,8 +12642,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12645,8 +12657,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12671,12 +12682,11 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linear-Dependence-and-Span">Linear Dependence and Span<a class="anchor-link" href="#Linear-Dependence-and-Span">&#182;</a></h2><ul>
+<h2 id="Linear-Dependence-and-Span">Linear Dependence and Span<a class="anchor-link" href="#Linear-Dependence-and-Span">&#182;</a></h2><h3 id="Solving-Equations-(again)">Solving Equations (again)<a class="anchor-link" href="#Solving-Equations-(again)">&#182;</a></h3><ul>
 <li>$\mathbf{A}^{-1}$ only exists if $\mathbf{A}\mathbf{x} = \mathbf{b}$ has exactly one solution for each b<ul>
 <li>all the hyperplanes need to intersect in a common point</li>
 <li>but it could have no solution or infinitely many solutions.</li>
@@ -12695,8 +12705,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12715,14 +12724,13 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linear-Dependence">Linear Dependence<a class="anchor-link" href="#Linear-Dependence">&#182;</a></h3><ul>
 <li>$n \geq m$ (more columns than rows) is only necessary but not sufficient as columns could be redundant.<ul>
-<li>$\begin{bmatrix} 0 & 0 \\ 1 & 1 \end{bmatrix}$ has two columns, but column space is a single line.</li>
+<li>$\begin{bmatrix} 0 &amp; 0 \\ 1 &amp; 1 \end{bmatrix}$ has two columns, but column space is a single line.</li>
 <li>this is called <em>linear dependence</em>.</li>
 </ul>
 </li>
@@ -12738,17 +12746,33 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Least-Squares-Solutions-and-the-Transpose">Least Squares Solutions and the Transpose<a class="anchor-link" href="#Least-Squares-Solutions-and-the-Transpose">&#182;</a></h3>
+<h3 id="Least-Squares-Solutions-and-the-Transpose">Least Squares Solutions and the Transpose<a class="anchor-link" href="#Least-Squares-Solutions-and-the-Transpose">&#182;</a></h3><ul>
+<li>When $\mathbf{A}\mathbf{x} = \mathbf{b}$ has no solution, multiply by $\mathbf{A}^\top$ and solve $\mathbf{A}^\top \mathbf{A}\mathbf{x} =  \mathbf{A}^\top \mathbf{b}$</li>
+<li>Why?<ul>
+<li>short answer: <ul>
+<li>the columns of $\mathbf{A}$ span only a small part of the m-dimensional space </li>
+<li>All the potential $\mathbf{b}$s that would admit a solution to $\mathbf{A}\mathbf{x} = \mathbf{b}$ lie on a subspace (hyperplane)</li>
+<li>For all others $\mathbf{b}$s we will have a remaining error term $\mathbf{e} = \mathbf{b}- \mathbf{A}\mathbf{x}$</li>
+<li>We want to look for the point closest to $\mathbf{b}$ in this plane</li>
+<li>that point comes from $\mathbf{A}^\top(\mathbf{b}-\mathbf{A}\mathbf{x})=\mathbf{0}$<ul>
+<li>the error $(\mathbf{b}-\mathbf{A}\mathbf{x})$ makes a right angle with all (column) vectors $\mathbf{a}_i$ of $\mathbf{A}$:</li>
+<li>i.e. the inner product $\mathbf{a}_i^\top(\mathbf{b}-\mathbf{A}\mathbf{x})$ is zero</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12765,14 +12789,16 @@ length of unit vector: 1.0
 </li>
 </ul>
 </li>
-<li>$\mathbf{A}\mathbf{x}=\mathbf{b}$ has a solution exactly when $\mathbf{b}$ is in the column space of $\mathbf{A}$</li>
+<li>$\mathbf{A}\mathbf{x}=\mathbf{b}$ has a solution exactly when $\mathbf{b}$ is in the column space of $\mathbf{A}$<ul>
+<li>otherwise we can obtain a least squares solution by using the transpose of A</li>
+</ul>
+</li>
 </ul>
 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12794,8 +12820,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12811,8 +12836,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12825,8 +12849,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12837,8 +12860,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12859,8 +12881,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12883,8 +12904,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12902,8 +12922,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12921,8 +12940,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12934,13 +12952,12 @@ length of unit vector: 1.0
 </div>
 </div>
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>If $\mathbf{A}$ has n linearly independent eigenvectors, we can concatenate them into a matrix $\mathbf{V}$ with one eigenvector per column: $\mathbf{V} = \begin{bmatrix} \mathbf{v}^1 & ... & \mathbf{v}^n \end{bmatrix}$ and the eigenvalues into a vector $\mathbf{\lambda} = \begin{bmatrix} \mathbf{\lambda}^1 & ... & \mathbf{\lambda}^\top \end{bmatrix}$<ul>
+<li>If $\mathbf{A}$ has n linearly independent eigenvectors, we can concatenate them into a matrix $\mathbf{V}$ with one eigenvector per column: $\mathbf{V} = \begin{bmatrix} \mathbf{v}^1 &amp; ... &amp; \mathbf{v}^n \end{bmatrix}$ and the eigenvalues into a vector $\mathbf{\lambda} = \begin{bmatrix} \mathbf{\lambda}^1 &amp; ... &amp; \mathbf{\lambda}^\top \end{bmatrix}$<ul>
 <li>the eigendecomposition is then given by $$\mathbf{A} = \mathbf{V} diag(\mathbf{\lambda})\mathbf{V}^{-1}$$</li>
 </ul>
 </li>
@@ -12970,7 +12987,9 @@ length of unit vector: 1.0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -13103,7 +13122,9 @@ RK5CYII=
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1st eigenvector:  [ 0.70710678  0.70710678] with eigenvalue:  2
@@ -13134,7 +13155,9 @@ RK5CYII=
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>the matrix V composed of the eigenvectors: 
@@ -13166,7 +13189,9 @@ RK5CYII=
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>the diagonal matrix containing the eigenvalues: 
@@ -13198,7 +13223,9 @@ RK5CYII=
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>computing V diag(Lambda) V^-1 
@@ -13234,7 +13261,9 @@ RK5CYII=
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Computing the eigendecomposition to check: 
@@ -13288,7 +13317,9 @@ the eigenvectors
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The original vectors on the unit circle
@@ -13297,7 +13328,9 @@ the eigenvectors
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -13429,7 +13462,9 @@ RK5CYII=
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The transformed vectors after multiplying by the matrix we constructed from the eigenvectors
@@ -13438,7 +13473,9 @@ RK5CYII=
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -13573,8 +13610,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13597,8 +13633,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13613,8 +13648,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13639,8 +13673,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div><aside class="notes">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13653,8 +13686,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </aside></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13668,8 +13700,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13692,8 +13723,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13715,8 +13745,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13729,8 +13758,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13749,8 +13777,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13773,8 +13800,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13798,8 +13824,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13821,8 +13846,7 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13831,14 +13855,40 @@ jPG4/wcc0/slbOUDsgAAAABJRU5ErkJggg==
 <li>an array of numbers arranged in a grid with variable number of axis </li>
 </ul>
 </li>
-<li>$A_{i,j,k}$ </li>
+<li>e.g. $A_{i,j,k}$ <ul>
+<li>would need <em>three</em> indices per entry</li>
+</ul>
+</li>
 </ul>
 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><ul>
+<li>Goodfellow, Bengio, Courville - Chapter 2</li>
+</ul>
+<p>&lt;img src=<a href="https://images.gr-assets.com/books/1478212695l/30422361.jpg">https://images.gr-assets.com/books/1478212695l/30422361.jpg</a> height = 400&gt;</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Strang - Linear Algebra</li>
+</ul>
+<p>&lt;img src=<a href="https://images-na.ssl-images-amazon.com/images/I/41Mf6xABXtL.jpg">https://images-na.ssl-images-amazon.com/images/I/41Mf6xABXtL.jpg</a> height = 500&gt;</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
