@@ -11861,7 +11861,8 @@ a.anchor-link {
 <h1 id="Linear-Algebra">Linear Algebra<a class="anchor-link" href="#Linear-Algebra">&#182;</a></h1><p>This is going to be a recap of the main concepts of linear algebra that we will need for Machine Learning. It is not a fully structured and coherent lecture, but more like a collection of ideas and concepts. I hope it will still be useful...</p>
 <h3 id="topics">topics<a class="anchor-link" href="#topics">&#182;</a></h3><ul>
 <li>What and why? </li>
-<li>Scalars, Vectors, Matrices </li>
+<li>Scalars, Vectors, Matrices</li>
+<li>What can we do with them?</li>
 <li>Systems of Linear Equations</li>
 <li>The Transpose</li>
 <li>Matrix operations</li>
@@ -11873,7 +11874,6 @@ a.anchor-link {
 <li>The Moore-Penrose Pseudoinverse</li>
 <li>The Trace Operator</li>
 <li>The Determinant</li>
-<li>final note: Tensors</li>
 <li>(Example: PCA)</li>
 </ul>
 
@@ -11885,17 +11885,35 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Linear-Algebra">Linear Algebra<a class="anchor-link" href="#Linear-Algebra">&#182;</a></h1><h2 id="What-and-Why?">What and Why?<a class="anchor-link" href="#What-and-Why?">&#182;</a></h2><ul>
-<li>a branch of mathematics that deals with linear systems<ul>
-<li>systems of linear equations $a_1 x_1 + a_2 x_2 + ... + a_n x_n = b $</li>
-<li>linear functions $ (x_1, x_2, ..., x_n) \mapsto a_1 x_1 + a_2 x_2 + ... + a_n x_n$</li>
-<li>their representations through matrices and vector spaces</li>
-</ul>
-</li>
+<li>a branch of mathematics that deals with linear systems in n dimensions</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>systems of linear equations $a_1 x_1 + a_2 x_2 + ... + a_n x_n = b $</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>linear functions $ (x_1, x_2, ..., x_n) \mapsto a_1 x_1 + a_2 x_2 + ... + a_n x_n$</li>
+<li>their representations through matrices and vector spaces</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11940,7 +11958,7 @@ a.anchor-link {
 <h1 id="Scalars,-Vectors,-Matrices,-and-Tensors">Scalars, Vectors, Matrices, and Tensors<a class="anchor-link" href="#Scalars,-Vectors,-Matrices,-and-Tensors">&#182;</a></h1>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11951,7 +11969,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11962,6 +11980,85 @@ a.anchor-link {
 <li>n real elements then $\mathbf{x} \in \mathbb{R} ^n$</li>
 <li>$ \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$</li>
 <li>needs <em>one</em> index to specify an element</li>
+<li>think of vectors as identifying points in n-dimensional space<ul>
+<li>each element giving the coordinate along an axis (dimension)</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Matrices">Matrices<a class="anchor-link" href="#Matrices">&#182;</a></h2><ul>
+<li>a 2D array of numbers</li>
+<li>upper-case variables $\mathbf{A}$</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>real-valued, $m$ rows and $n$ columns, then $\mathbf{A} \in \mathbb{R}^{m \times n} $</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>a specific element $A_{i,j}$ needs <em>two indices</em> to identify member</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$ \mathbf{A} = \begin{bmatrix} a_{1,1} &amp; a_{1,2}  \\ a_{2,1} &amp; a_{2,2} \\ a_{3,1} &amp; a_{3,2} \end{bmatrix}$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tensors">Tensors<a class="anchor-link" href="#Tensors">&#182;</a></h2><ul>
+<li>a 'generalization' of scalars, vectors, matrices: <ul>
+<li>an array of numbers arranged in a grid with variable number of axis </li>
+</ul>
+</li>
+<li>e.g. $A_{i,j,k}$ <ul>
+<li>would need <em>three</em> indices per entry</li>
+</ul>
+</li>
+<li>this is oversimplified: see <a href="https://en.wikipedia.org/wiki/Tensor">https://en.wikipedia.org/wiki/Tensor</a></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vectors">Vectors<a class="anchor-link" href="#Vectors">&#182;</a></h2><ul>
+<li>$ \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$</li>
 <li>think of vectors as identifying points in n-dimensional space<ul>
 <li>each element giving the coordinate along an axis (dimension)</li>
 </ul>
@@ -11994,7 +12091,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12008,48 +12105,128 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Vector-addition-geometrically-speaking...">Vector addition geometrically speaking...<a class="anchor-link" href="#Vector-addition-geometrically-speaking...">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Vector_addition.png/640px-Vector_addition.png" alt=""></p>
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Scalar-Multiplication">Scalar Multiplication<a class="anchor-link" href="#Scalar-Multiplication">&#182;</a></h3><ul>
 <li>the second important operation for vectors</li>
-<li>we multiply each component (again) by a scalar value<ul>
-<li>$2\mathbf{v}=  \begin{bmatrix} 2 v_1 \\  2 v_2 \end{bmatrix} $ or:  $-\mathbf{v}=  \begin{bmatrix} - v_1 \\  - v_2 \end{bmatrix} $</li>
-</ul>
-</li>
+<li>we multiply each component (again) by a scalar value</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$2\mathbf{v}=  \begin{bmatrix} 2 v_1 \\  2 v_2 \end{bmatrix} $ or:  $-\mathbf{v}=  \begin{bmatrix} - v_1 \\  - v_2 \end{bmatrix} $</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linear-Combinations">Linear Combinations<a class="anchor-link" href="#Linear-Combinations">&#182;</a></h3><ul>
 <li>Linear algebra is built on these two operations (hence the name linear).</li>
-<li>we can form <em>linear combinations</em> by multiplying vectors with scalars and adding the results:<ul>
-<li>$c\mathbf{v}+d\mathbf{w}$ is the prototypic linear combination<ul>
+<li>we can form <em>linear combinations</em> by multiplying vectors with scalars and adding the results:</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$c\mathbf{v}+d\mathbf{w}$ is the prototypic linear combination</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$1\mathbf{v}+1\mathbf{w}$ is the vector sum</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$1\mathbf{v}-1\mathbf{w}$ is the difference</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$0\mathbf{v}+0\mathbf{w}$ <em>zero vector</em></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$c\mathbf{v}+0\mathbf{w}$ scaled vector in same direction as $\mathbf{v}$</li>
 </ul>
-</li>
-</ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>all possible linear combinations of n vectors typically fill the entire n-dimensional space</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Linear-combinations:-a-graphical-example">Linear combinations: a graphical example<a class="anchor-link" href="#Linear-combinations:-a-graphical-example">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12058,34 +12235,84 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Representing-Vectors">Representing Vectors<a class="anchor-link" href="#Representing-Vectors">&#182;</a></h3><ul>
 <li>as two numbers (or n numbers in n-dimensional space)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>as an arrow from the origin</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>as a point in the plane (or n-dimensional space)</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
 <li>a vector in n dimensions has n components</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$\mathbf{v}+\mathbf{w}=(v_1+v_2, w_1+w_2)$ and $c\mathbf{v}=(c v_1, c v_2)$: one component at a time!</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>linear combination of three vectors is: $c \mathbf{u}+ d\mathbf{v}+e\mathbf{w}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>all combinations of three (independent) vectors fill the whole $\mathbb{R}^3$</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12099,12 +12326,12 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://betterexplained.com/wp-content/uploads/dotproduct/dot_product_components.png" alt="source: betterexplained.com/"></p>
+<p><img src="https://betterexplained.com/wp-content/uploads/dotproduct/dot_product_rotation.png" alt="source: betterexplained.com/"></p>
 <ul>
 <li>source: betterexplained.com/</li>
 </ul>
@@ -12285,27 +12512,61 @@ length of unit vector: 1.0
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
 <li>dot (inner) product multiplies each component and adds the results</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>length of a vector is the square root of the dot product with itself</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>a vector divided by its length gives the unit vector in the same direction</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the dot product is 0 when the vectors are perpendicular</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the cosine of the angle between vectors is the dot product normalized by the multiplied lengths</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Matrices">Matrices<a class="anchor-link" href="#Matrices">&#182;</a></h2><ul>
 <li>a 2D array of numbers</li>
-<li>upper-case variables $\mathbf{A}$</li>
-<li>real-valued, $m$ rows and $n$ columns, then $\mathbf{A} \in \mathbb{R}^{m \times n} $</li>
-<li>a specific element $A_{i,j}$ <ul>
-<li>needs <em>two indices</em> to identify member</li>
-</ul>
-</li>
 <li>$ \mathbf{A} = \begin{bmatrix} a_{1,1} &amp; a_{1,2}  \\ a_{2,1} &amp; a_{2,2} \\ a_{3,1} &amp; a_{3,2} \end{bmatrix}$</li>
 </ul>
 
@@ -12317,23 +12578,12 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Multiplying-Matrices-and-Vectors">Multiplying Matrices and Vectors<a class="anchor-link" href="#Multiplying-Matrices-and-Vectors">&#182;</a></h3><ul>
-<li>$\mathbf{y}=\mathbf{A}\mathbf{x}$, $\mathbf{A} \in \mathbb{R}^{m \times n}$, $\mathbf{x} \in \mathbb{R}^{n \times 1}$, then $\mathbf{y} \in \mathbb{R}^{m \times 1}$:<ul>
-<li>$y_{i,1}=\sum_{k} A_{i,k} x_{k,1}$</li>
+<li>$\mathbf{y}=\mathbf{A}\mathbf{x}$, <ul>
+<li>$\mathbf{A} \in \mathbb{R}^{m \times n}$, </li>
+<li>$\mathbf{x} \in \mathbb{R}^{n \times 1}$, </li>
+<li>then $\mathbf{y} \in \mathbb{R}^{m \times 1}$:</li>
 </ul>
 </li>
-<li>y is a linear combination of A's columns (weights defined by x)</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="From-Vectors-to-Matrices">From Vectors to Matrices<a class="anchor-link" href="#From-Vectors-to-Matrices">&#182;</a></h3><ul>
-<li>$u = \begin{bmatrix} 1 \\ -1 \\ 0\end{bmatrix}, v = \begin{bmatrix} 0 \\ 1 \\ -1\end{bmatrix}, w = \begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix}$ </li>
-<li>the combination $c\mathbf{u} + d\mathbf{v} + e\mathbf{w} = \begin{bmatrix}c \\d-c \\ e-d \end{bmatrix}$</li>
 </ul>
 
 </div>
@@ -12344,10 +12594,64 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
+<li>$y_{i,1}=\sum_{k} A_{i,k} x_{k,1}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>y is a linear combination of A's columns</strong> (weights defined by x)</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="From-Vectors-to-Matrices">From Vectors to Matrices<a class="anchor-link" href="#From-Vectors-to-Matrices">&#182;</a></h3><ul>
+<li>$u = \begin{bmatrix} 1 \\ -1 \\ 0\end{bmatrix}, v = \begin{bmatrix} 0 \\ 1 \\ -1\end{bmatrix}, w = \begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix}$ </li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the combination $c\mathbf{u} + d\mathbf{v} + e\mathbf{w} = \begin{bmatrix}c \\d-c \\ e-d \end{bmatrix}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>let's rewrite (stack) the vectors into matrix and multiply with the vector of the coefficients: <ul>
 <li>$ \begin{bmatrix}1 &amp; 0 &amp; 0  \\ -1 &amp; 1 &amp; 0 \\ 0 &amp; -1 &amp; 1 \end{bmatrix} \begin{bmatrix}c \\d \\ e \end{bmatrix} = \begin{bmatrix}c \\d-c \\ e-d \end{bmatrix}$</li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>It is useful to interpret matrices as a collection of (column) vectors!</li>
 </ul>
 
@@ -12359,13 +12663,10 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="From-Vectors-to-Matrices-II">From Vectors to Matrices II<a class="anchor-link" href="#From-Vectors-to-Matrices-II">&#182;</a></h3><ul>
-<li>$\mathbf{y}=\mathbf{A}\mathbf{x}$:<ul>
+<li>$\mathbf{y}=\mathbf{A}\mathbf{x}$:</li>
 <li>the matrix A acts on the vector x<ul>
-<li>the result b is <em>a linear combination of the columns</em> of A: Ax = b</li>
-<li>keep this in mind</li>
+<li>the result y is <em>a linear combination of the columns</em> of A: Ax = y</li>
 <li>this is a linear system of equations! We will get back to this...</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -12384,7 +12685,7 @@ length of unit vector: 1.0
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">]])))</span>
@@ -12419,33 +12720,73 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="System-of-Linear-Equations">System of Linear Equations<a class="anchor-link" href="#System-of-Linear-Equations">&#182;</a></h2><ul>
-<li>$\mathbf{A}\mathbf{x} = \mathbf{b}$<ul>
+<li>$\mathbf{A}\mathbf{x} = \mathbf{b}$</li>
 <li>$\mathbf{A}\in\mathbb{R}^{m \times n}$ the coefficients, $\mathbf{b}\in\mathbb{R}^{m}$ a known vector, and $\mathbf{x}\in\mathbb{R}^{n}$ a vector of unknown variables</li>
-</ul>
-</li>
-<li>each row of $\mathbf{A}$ and entry of $\mathbf{b}$ provide a constraint, e.g. $\mathbf{A}_{1,1}x_1+\mathbf{A}_{1,2}x_2+...+\mathbf{A}_{1,n}x_n = b_1$<ul>
-<li>basically each row defines a (hyper)plane in n-dimensional space </li>
-<li>we get a solution if all of them intersect in the same place</li>
-</ul>
-</li>
-<li>How to solve such equations?</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>each row of $\mathbf{A}$ and entry of $\mathbf{b}$ provide a constraint, e.g. $\mathbf{A}_{1,1}x_1+\mathbf{A}_{1,2}x_2+...+\mathbf{A}_{1,n}x_n = b_1$<ul>
+<li>i.e. it defines a (hyper)plane in n-dimensional space</li>
+<li>we get a solution if all of them intersect in the same place</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>How to solve such equations?</li>
+<li>We will need some special matrices</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Identity-Matrix">Identity Matrix<a class="anchor-link" href="#Identity-Matrix">&#182;</a></h3><ul>
 <li>$\mathbf{I}_n\mathbf{x}=\mathbf{x}$, $\forall \mathbf{x}\in\mathbb{R}^n$ </li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>so in 2D: $\mathbf{I}_2=\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}$</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>it is the neutral element (just like the 1 in scalar multiplication)</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12457,7 +12798,18 @@ length of unit vector: 1.0
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the inverse of each element (just as 1/x in scalar multiplication)</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12515,34 +12867,70 @@ length of unit vector: 1.0
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
 <li>Matrix times vector: Ax = combination of columns of A</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>The solution to $\mathbf{A}\mathbf{x} = \mathbf{b}$ is $\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}$, when $\mathbf{A}$ is invertible.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>The inverse matrix gives $\mathbf{A}^{-1}\mathbf{A} = \mathbf{I}_n$ and $\mathbf{A}\mathbf{A}^{-1} = \mathbf{I}_n$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>if $\mathbf{A}\mathbf{x}=\mathbf{0}$ for a nonzero vector x then A has no inverse.</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="the-Transpose">the Transpose<a class="anchor-link" href="#the-Transpose">&#182;</a></h2><ul>
 <li>important and much simpler as inverse</li>
-<li>mirror image of the matrix across main diagonal: $(\mathbf{A}^\top)_{i,j}=A_{j,i}$<ul>
-<li>the columns become the rows</li>
-</ul>
-</li>
-<li>vectors can be seen as 1D matrices, i.e:  $\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ can be written as $\begin{bmatrix} x_1 &amp; x_2 &amp; x_3 \end{bmatrix}^\top$ </li>
-<li>a scalar is a 1x1 matrix, i.e. $a^\top = a $ </li>
 </ul>
 
 </div>
 </div>
 </div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>mirror image of the matrix across main diagonal: $(\mathbf{A}^\top)_{i,j}=A_{j,i}$</li>
+<li>columns become rows!</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[198]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
@@ -12575,7 +12963,7 @@ length of unit vector: 1.0
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[199]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
@@ -12605,20 +12993,51 @@ length of unit vector: 1.0
 </div>
 </div>
 
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>vectors can be seen as 1D matrices, i.e:  $\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ can be written as $\begin{bmatrix} x_1 &amp; x_2 &amp; x_3 \end{bmatrix}^\top$ </li>
+<li>a scalar is a 1x1 matrix, i.e. $a^\top = a $ </li>
+</ul>
+
+</div>
+</div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>$\mathbf{A}\mathbf{x}$ combines the columns of A while $\mathbf{x^\top}\mathbf{A^\top}$ combines the rows of $\mathbf{A^\top}$: <ul>
+<li>$\mathbf{A}\mathbf{x}$ combines the columns of A while $\mathbf{x^\top}\mathbf{A^\top}$ combines the rows of $\mathbf{A^\top}$: </li>
 <li>the same combination of the same vectors!</li>
 </ul>
-</li>
-<li>more mathematically speaking: $\mathbf{A^\top}$ is the matrix that makes those two products equal for every x and y:<ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>more mathematically speaking: $\mathbf{A^\top}$ is the matrix that makes those two products equal for every x and y:</li>
 <li>$(\mathbf{A}\mathbf{x})^\top \mathbf{y} = \mathbf{x}^\top (\mathbf{A}^\top \mathbf{y})$</li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>that explains the name "inner products":</li>
+<li>$^\top$ inside: the dot or inner product: $\mathbf{x}^\top \mathbf{y}, (1 \times n)(n \times 1)$</li>
+<li>$^\top$ outside: the rank or outer product: $\mathbf{x}\mathbf{y}^\top, (n \times 1)(1 \times n)$</li>
 </ul>
 
 </div>
@@ -12629,11 +13048,6 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>that explains the name "inner products":<ul>
-<li>$^\top$ inside: the dot or inner product: $\mathbf{x}^\top \mathbf{y}, (1 \times n)(n \times 1)$</li>
-<li>$^\top$ outside: the rank or outer product: $\mathbf{x}\mathbf{y}^\top, (n \times 1)(1 \times n)$</li>
-</ul>
-</li>
 <li>Inner products are everywhere! we often compute weighted sums:<ul>
 <li>work = movements forces: $ \mathbf{x}^\top \mathbf{f}$</li>
 <li>income = quantities prices: $ \mathbf{q}^\top \mathbf{p}$</li>
@@ -12651,36 +13065,6 @@ length of unit vector: 1.0
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
 <li>the transpose puts rows of $\mathbf{A}$ into the columns of $\mathbf{A}^\top$</li>
-<li>the dot product is $\mathbf{x}^\top \mathbf{y}$<ul>
-<li>thus, $(\mathbf{A} \mathbf{x})^\top \mathbf{y} = \mathbf{x}^\top (\mathbf{A}^\top \mathbf{y})$</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="(some)-Matrix-computations">(some) Matrix computations<a class="anchor-link" href="#(some)-Matrix-computations">&#182;</a></h2><h3 id="Matrix-addition">Matrix addition<a class="anchor-link" href="#Matrix-addition">&#182;</a></h3><ul>
-<li>$\mathbf{C}=\mathbf{A}+\mathbf{B}$, where $\mathbf{C}_{i,j}= \mathbf{A}_{i,j}+\mathbf{B}_{i,j}$  </li>
-</ul>
-<h3 id="scalar-multiplication">scalar multiplication<a class="anchor-link" href="#scalar-multiplication">&#182;</a></h3><ul>
-<li>$\mathbf{D} = a \mathbf{B}$, where $\mathbf{D}_{i,j} = a \mathbf{B}_{i,j}$</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Multiplying-matrices">Multiplying matrices<a class="anchor-link" href="#Multiplying-matrices">&#182;</a></h3><ul>
-<li>$\mathbf{C}=\mathbf{A}\mathbf{B}$, defined only if $\mathbf{A}$ has as many columns as $\mathbf{B}$ has rows</li>
-<li>$\mathbf{A} \in \mathbb{R}^{m \times n}$, $\mathbf{B} \in \mathbb{R}^{n \times p}$, then $\mathbf{C} \in \mathbb{R}^{m \times p}$:</li>
 </ul>
 
 </div>
@@ -12691,10 +13075,74 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>$C_{i,j}=\sum_{k} A_{i,k} B_{k,j}$<ul>
-<li>same principle: each column of C is a linear combination of the columns of A (defined by columns of B)</li>
+<li>the dot product is $\mathbf{x}^\top \mathbf{y}$</li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$(\mathbf{A} \mathbf{x})^\top \mathbf{y} = \mathbf{x}^\top (\mathbf{A}^\top \mathbf{y})$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="(some)-Matrix-computations">(some) Matrix computations<a class="anchor-link" href="#(some)-Matrix-computations">&#182;</a></h2><h3 id="Matrix-addition">Matrix addition<a class="anchor-link" href="#Matrix-addition">&#182;</a></h3><ul>
+<li>$\mathbf{C}=\mathbf{A}+\mathbf{B}$, where $\mathbf{C}_{i,j}= \mathbf{A}_{i,j}+\mathbf{B}_{i,j}$  </li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="scalar-multiplication">scalar multiplication<a class="anchor-link" href="#scalar-multiplication">&#182;</a></h3><ul>
+<li>$\mathbf{D} = a \mathbf{B}$, where $\mathbf{D}_{i,j} = a \mathbf{B}_{i,j}$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Multiplying-matrices">Multiplying matrices<a class="anchor-link" href="#Multiplying-matrices">&#182;</a></h3><ul>
+<li>$\mathbf{C}=\mathbf{A}\mathbf{B}$, defined only if $\mathbf{A}$ has as many columns as $\mathbf{B}$ has rows</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$\mathbf{A} \in \mathbb{R}^{m \times n}$, $\mathbf{B} \in \mathbb{R}^{n \times p}$, then $\mathbf{C} \in \mathbb{R}^{m \times p}$:</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$C_{i,j}=\sum_{k} A_{i,k} B_{k,j}$</li>
+<li>same principle: each column of C is a linear combination of the columns of A (defined by column vectors of B)</li>
 </ul>
 
 </div>
@@ -12723,11 +13171,41 @@ length of unit vector: 1.0
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="some-useful-Properties">some useful Properties<a class="anchor-link" href="#some-useful-Properties">&#182;</a></h3><ul>
 <li>distributive: $\mathbf{A}\left(\mathbf{B}+\mathbf{C}\right) = \mathbf{A}\mathbf{B} + \mathbf{A}\mathbf{C}$</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>associative: $\mathbf{A}(\mathbf{B}\mathbf{C}) = (\mathbf{A}\mathbf{B})\mathbf{C} $</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><em>not</em> commutative: $\mathbf{A}\mathbf{B}$ not always the same as $\mathbf{B}\mathbf{A} $ <ul>
 <li>but the inner vector product is: $\mathbf{x}^\top \mathbf{y} = \mathbf{y}^\top \mathbf{x}$</li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>transpose of product: $(\mathbf{A}\mathbf{B})^\top = \mathbf{B}^\top\mathbf{A}^\top$</li>
 <li>many more properties exist. Consult a textbook...</li>
 </ul>
@@ -12751,7 +13229,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div>
-</aside></section></section><section><section>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12762,9 +13240,40 @@ length of unit vector: 1.0
 <li>but it could have no solution or infinitely many solutions.</li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>columns of A define vectors (directions)</li>
-<li>Can we reach $\mathbf{b}$ by taking steps of certain size along these directions? In how many ways? $\mathbf{x}$ specifies these step lengths: $\mathbf{A}\mathbf{x} = \sum_{i}x_i \mathbf{A}_{:,i}$</li>
-<li>the <em>span</em> of a set of vectors is the set of all points obtainable by linear combinations of those vectors.</li>
+<li>Can we reach $\mathbf{b}$ by taking steps of certain size along these directions? </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$\mathbf{x}$ specifies these step lengths: $\mathbf{A}\mathbf{x} = \sum_{i}x_i \mathbf{A}_{:,i}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the <em>span</em> of a set of vectors is the set of all points reachable by linear combinations of those vectors.</li>
 </ul>
 
 </div>
@@ -12792,37 +13301,101 @@ length of unit vector: 1.0
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solving-Equations-II">Solving Equations II<a class="anchor-link" href="#Solving-Equations-II">&#182;</a></h3><ul>
-<li>$\mathbf{A}\mathbf{x} = \mathbf{b}$ has a solution if $\mathbf{b}$ is in the span of the columns of $\mathbf{A}$.<ul>
-<li>this is called the <em>column space</em> of $\mathbf{A}$ (or the range).</li>
-</ul>
-</li>
-<li>to have solutions for all $\mathbf{b} \in \mathbb{R}^m $ the column space of $\mathbf{A}$ needs to be all of  $\mathbb{R}^m $.<ul>
-<li>i.e. $\mathbf{A}$ needs at least $m$ columns.</li>
-<li>e.g. a $3 \times 2$ matrix: $\mathbf{b}$ is 3D but $\mathbf{x}$ is only 2D. The column space has only 2 basis vectors, it can only trace out a 2-D plane. There are only solutions for $\mathbf{b}$ on that plane.</li>
-</ul>
-</li>
+<li>$\mathbf{A}\mathbf{x} = \mathbf{b}$ has a solution if $\mathbf{b}$ is in the span of the columns of $\mathbf{A}$.</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the span this is called the <em>column space</em> of $\mathbf{A}$.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>to have solutions for all $\mathbf{b} \in \mathbb{R}^m $ the column space of $\mathbf{A}$ needs to be all of  $\mathbb{R}^m $.</li>
+<li>i.e. $\mathbf{A}$ needs at least $m$ columns.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>e.g. a $3 \times 2$ matrix: $\mathbf{b}$ is 3D but $\mathbf{x}$ is only 2D. The column space has only 2 basis vectors, it can only trace out a 2-D plane. There are only solutions for $\mathbf{b}$ on that plane.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linear-Dependence">Linear Dependence<a class="anchor-link" href="#Linear-Dependence">&#182;</a></h3><ul>
-<li>$n \geq m$ (more columns than rows) is only necessary but not sufficient as columns could be redundant.<ul>
+<li>$n \geq m$ (more columns than rows) is only necessary but not sufficient as columns could be redundant.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$\begin{bmatrix} 0 &amp; 0 \\ 1 &amp; 1 \end{bmatrix}$ has two columns, but column space is a single line.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>this is called <em>linear dependence</em>.</li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>A set of vectors is linear <em>independent</em> if no vector (in the set) is a linear combination of the other vectors. </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>Thus, to have a column space to encompass $\mathbb{R}^{m}$, the matrix must have at least $m$ linearly independent columns.</li>
 </ul>
 
@@ -12845,7 +13418,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12863,12 +13436,41 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>short answer: <ul>
+<li>short answer: </li>
 <li>the columns of $\mathbf{A}$ span only a small part of the m-dimensional space </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>All the potential $\mathbf{b}$s that would admit a solution to $\mathbf{A}\mathbf{x} = \mathbf{b}$ lie on a subspace (hyperplane)</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>For all others $\mathbf{b}$s we will have a remaining error term $\mathbf{e} = \mathbf{b}- \mathbf{A}\mathbf{x}$</li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>We want to look for the point closest to $\mathbf{b}$ in this plane</li>
 </ul>
 
 </div>
@@ -12879,10 +13481,7 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>We want to look for the point closest to $\mathbf{b}$ in this plane<ul>
-<li>that point comes from $\mathbf{A}^\top(\mathbf{b}-\mathbf{A}\mathbf{x})=\mathbf{0}$</li>
-</ul>
-</li>
+<li>the error $(\mathbf{b}-\mathbf{A}\mathbf{x})$ makes a right angle with all (column) vectors $\mathbf{a}_i$ of $\mathbf{A}$:</li>
 </ul>
 
 </div>
@@ -12893,10 +13492,28 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>the error $(\mathbf{b}-\mathbf{A}\mathbf{x})$ makes a right angle with all (column) vectors $\mathbf{a}_i$ of $\mathbf{A}$:<ul>
-<li>i.e. the inner product $\mathbf{a}_i^\top(\mathbf{b}-\mathbf{A}\mathbf{x})$ is zero</li>
+<li>the inner product $\mathbf{a}_i^\top(\mathbf{b}-\mathbf{A}\mathbf{x})$ is zero</li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>this can be written as a linear system $\mathbf{A}^\top(\mathbf{b}-\mathbf{A}\mathbf{x})=\mathbf{0}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$\mathbf{A}^\top \mathbf{A}\mathbf{x} =  \mathbf{A}^\top \mathbf{b}$ gives us the solution on the subspace that it closest to the desired b</li>
 </ul>
 
@@ -12909,17 +13526,63 @@ length of unit vector: 1.0
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
 <li>$\mathbb{R}^n$ contains all column vectors with n real components</li>
-<li>a set of vectors is independent if no vector is a linear combination of the others<ul>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>a set of vectors is independent if no vector is a linear combination of the others</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the columns of a matrix are independent if $\mathbf{x}=\mathbf{0}$ is the only solution to $\mathbf{A}\mathbf{x}=\mathbf{0}$</li>
 </ul>
-</li>
-<li>a set of vectors <em>span</em> a space if their combinations fill that space<ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>a set of vectors <em>span</em> a space if their combinations fill that space</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the combinations of columns of A form the <em>column space</em> <ul>
 <li>the column space is <em>spanned</em> by the columns</li>
 </ul>
 </li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$\mathbf{A}\mathbf{x}=\mathbf{b}$ has a solution exactly when $\mathbf{b}$ is in the column space of $\mathbf{A}$<ul>
 <li>otherwise we can obtain a least squares solution by using the transpose of A</li>
 </ul>
@@ -12928,7 +13591,7 @@ length of unit vector: 1.0
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12938,14 +13601,33 @@ length of unit vector: 1.0
 <li>$||\mathbf{x}||_{p} = \left( \sum_{i} \left|x_i\right|^p \right) ^ {\frac{1}{p}}$</li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>norms map vectors to non-negative values.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>measure "distance to the origin"</li>
 </ul>
 
 </div>
 </div>
-</div><aside class="notes">
-
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12961,37 +13643,85 @@ length of unit vector: 1.0
 
 </div>
 </div>
-</div>
-</aside></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>The $L^2$ norm is the "standard" Euclidean norm and is often denoted by $\lVert \mathbf{x} \rVert$. It gives the Euclidean distance from the origin.</li>
-<li>We can also measure the size of $\mathbf{x}$ using the <em>squared</em> $L^2$ norm: $\mathbf{x}^\top \mathbf{x}$.<ul>
-<li>easier to work with mathematically and computationally:</li>
-<li>its derivatives with respect to each element depend only on that element, while for $L^2$ it depends on the entire vector.</li>
-</ul>
-</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>In an optimization context, squared $L^2$ is not so desirable, because it increases slowly near 0. We often want to discriminate between <em>near zero</em> and <em>zero</em>. For this the $L^1$ norm is used: $$ \lVert \mathbf{x} \rVert _{1} = \sum_i \left| x_i \right|$$</li>
+<li>We can also measure the size of $\mathbf{x}$ using the <em>squared</em> $L^2$ norm: $\mathbf{x}^\top \mathbf{x}$.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>easier to work with mathematically and computationally:</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>its derivatives with respect to each element depend only on that element, while for $L^2$ it depends on the entire vector.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>In an optimization context, squared $L^2$ is not so desirable, because it increases slowly near 0. We often want to discriminate between <em>near zero</em> and <em>zero</em>. </li>
+<li>For this the $L^1$ norm is used: $$ \lVert \mathbf{x} \rVert _{1} = \sum_i \left| x_i \right|$$</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>Sometimes, the size of a vector is measured by counting the number of nonzero elements. This is not a norm (scaling property).</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>Another common form is the $L^\infty$ or <em>max norm</em>: $$ \lVert \mathbf{x} \rVert _{\infty} = \max_i \left| x_i \right| $$.</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13002,44 +13732,97 @@ length of unit vector: 1.0
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Special-Kinds-of-Matrices-and-Vectors">Special Kinds of Matrices and Vectors<a class="anchor-link" href="#Special-Kinds-of-Matrices-and-Vectors">&#182;</a></h2><h3 id="Diagonal-Matrices">Diagonal Matrices<a class="anchor-link" href="#Diagonal-Matrices">&#182;</a></h3><ul>
-<li>$D_{i,j}=0$,  $\forall i\neq j$<ul>
-<li>Identity matrix</li>
-<li>$diag(\mathbf{v})$</li>
-<li>computationally very efficient: <ul>
-<li>$diag(\mathbf{v})\mathbf{x} = \mathbf{v}\circ \mathbf{x}$</li>
-<li>$diag(\mathbf{v})^{-1} = diag([\frac{1}{v_1},...,\frac{1}{v_n}]^\top)$</li>
+<li>$D_{i,j}=0$,  $\forall i\neq j$</li>
+<li>written as $diag(\mathbf{v})$</li>
 </ul>
-</li>
-<li>we often derive machine learning methods in terms of arbitrary matrices, but obtain less expensive (and less descriptive) approximations by restricting to diagonal matrices.  </li>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>computationally very efficient: <ul>
+<li>multiplication by a vector: $diag(\mathbf{v}) \mathbf{x} = \mathbf{v}\circ \mathbf{x}$</li>
 </ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the inverse: $diag(\mathbf{v})^{-1} = diag([\frac{1}{v_1},...,\frac{1}{v_n}]^\top)$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>we often derive machine learning methods in terms of arbitrary matrices, but obtain less expensive (and less descriptive) approximations by restricting to diagonal matrices.  </li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Orthogonal-Matrices">Orthogonal Matrices<a class="anchor-link" href="#Orthogonal-Matrices">&#182;</a></h3><ul>
-<li>a <em>unit vector</em>: $\lVert \mathbf{x} \rVert = 1$</li>
-<li>$\mathbf{x}$ and $\mathbf{y}$ are <em>orthogonal</em> if $\mathbf{x}^\top \mathbf{y} = 0$<ul>
-<li>if vectors are orthogonal and unit, they are called orthonormal</li>
+<li>reminder: a <em>unit vector</em> is: $\lVert \mathbf{x} \rVert = 1$</li>
+<li>reminder II: $\mathbf{x}$ and $\mathbf{y}$ are <em>orthogonal</em> if $\mathbf{x}^\top \mathbf{y} = 0$</li>
+<li>if vectors are <em>orthogonal</em> and of <em>unit length</em>, they are called <em>orthonormal</em></li>
 </ul>
-</li>
-<li>An <em>orthogonal matrix</em> is a square matrix with mutually orthonormal columns (and rows): <ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>An <em>orthogonal matrix</em> is a square matrix with mutually orthonormal columns (and rows): </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$ \mathbf{A}^\top \mathbf{A} = \mathbf{A} \mathbf{A}^\top = \mathbf{I}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$\implies \mathbf{A}^{-1} = \mathbf{A}^\top$</li>
 <li>inverse is very cheap to compute</li>
-</ul>
-</li>
 </ul>
 
 </div>
@@ -13060,7 +13843,7 @@ length of unit vector: 1.0
 </div>
 </div>
 </div>
-</aside></section></section><section><section>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13084,19 +13867,35 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>we can discover functional properties of matrices in a similar way: <em>Eigendecomposition</em><ul>
+<li>we can discover functional properties of matrices in a similar way: <em>Eigendecomposition</em></li>
 <li>Matrix -&gt; set of eigenvectors and eigenvalues</li>
-<li><em>eigenvector</em> of $\mathbf{A}$ is a (non-zero) vector $\mathbf{v}$ such that multiplication with $\mathbf{A}$ only changes the length of $\mathbf{v}$: <ul>
-<li>$ \mathbf{A}\mathbf{v} = \lambda \mathbf{v}$</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
 </div>
 </div>
 </div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><em>eigenvector</em> of $\mathbf{A}$ is a (non-zero) vector $\mathbf{v}$ such that multiplication with $\mathbf{A}$ only changes the length of $\mathbf{v}$: </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$ \mathbf{A}\mathbf{v} = \lambda \mathbf{v}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13114,15 +13913,23 @@ length of unit vector: 1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>If $\mathbf{A}$ has n linearly independent eigenvectors, we can concatenate them into a matrix $\mathbf{V}$ with one eigenvector per column: $\mathbf{V} = \begin{bmatrix} \mathbf{v}^1 &amp; ... &amp; \mathbf{v}^n \end{bmatrix}$ and the eigenvalues into a vector $\mathbf{\lambda} = \begin{bmatrix} \mathbf{\lambda}^1 &amp; ... &amp; \mathbf{\lambda}^\top \end{bmatrix}$<ul>
-<li>the eigendecomposition is then given by $$\mathbf{A} = \mathbf{V} diag(\mathbf{\lambda})\mathbf{V}^{-1}$$</li>
-</ul>
-</li>
+<li>If $\mathbf{A}$ has n linearly independent eigenvectors, we can concatenate them into a matrix $\mathbf{V}$ with one eigenvector per column: $\mathbf{V} = \begin{bmatrix} \mathbf{v}^1 &amp; ... &amp; \mathbf{v}^n \end{bmatrix}$ and the eigenvalues into a vector $\mathbf{\lambda} = \begin{bmatrix} \mathbf{\lambda}^1 &amp; ... &amp; \mathbf{\lambda}^\top \end{bmatrix}$</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the eigendecomposition is then given by $$\mathbf{A} = \mathbf{V} diag(\mathbf{\lambda})\mathbf{V}^{-1}$$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13132,9 +13939,18 @@ length of unit vector: 1.0
 </div>
 </div>
 </div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We start with defining the eigenvectors (direction) and the eigenvalues (stretch)</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -13171,7 +13987,7 @@ length of unit vector: 1.0
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">V</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">))</span>
@@ -13205,7 +14021,7 @@ length of unit vector: 1.0
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diagLambda</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">lambda1</span><span class="p">,</span><span class="n">lambda2</span><span class="p">)))</span>
@@ -13236,10 +14052,19 @@ length of unit vector: 1.0
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From these matrices we can construct $$\mathbf{A} = \mathbf{V} diag(\mathbf{\lambda})\mathbf{V}^{-1}$$</p>
+
+</div>
+</div>
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">diagLambda</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
@@ -13549,7 +14374,8 @@ RU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-effect-of-$\mathbf{A}-\mathbf{x}$">The effect of $\mathbf{A} \mathbf{x}$<a class="anchor-link" href="#The-effect-of-$\mathbf{A}-\mathbf{x}$">&#182;</a></h3><ul>
-<li>how vectors (from the unit circle) are transformed by A</li>
+<li>how are vectors (sampled from the unit circle) transformed by A?</li>
+<li>we compute $\mathbf{y}=\mathbf{A}\mathbf{x}$ and plot the results...</li>
 </ul>
 
 </div>
@@ -13557,7 +14383,7 @@ RU5ErkJggg==
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">p</span><span class="p">)))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">)]</span>
@@ -13571,7 +14397,7 @@ RU5ErkJggg==
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -13726,15 +14552,42 @@ TwAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Eigendecomposition-II">Eigendecomposition II<a class="anchor-link" href="#Eigendecomposition-II">&#182;</a></h3><ul>
 <li>constructing matrices from from eigenvalues and -vectors allows to stretch space in desired directions.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>We usually need to <em>decompose</em> a matrix into eigenvalues and eigenvectors to analyze its properties.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>Eigendecomposition does not always exist<ul>
 <li>complex eigenvalues and eigenvectors</li>
 </ul>
 </li>
-<li>but: every real, symmetric matrix can be decomposed into this form: $$\mathbf{A} = \mathbf{Q}\mathbf{\Lambda} \mathbf{Q}^\top$$<ul>
-<li>$\mathbf{Q}$ is orthogonal composed of eigenvectors from A</li>
-<li>$\mathbf{\Lambda}$ is diagonal </li>
-<li>as we have seen in our construction example...</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>but: every real, symmetric matrix can be decomposed<ul>
 <li>by convention we sort entries of $\mathbf{\Lambda}$ in descending order </li>
 </ul>
 </li>
@@ -13759,16 +14612,56 @@ TwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Eigendecomposition-II">Eigendecomposition II<a class="anchor-link" href="#Eigendecomposition-II">&#182;</a></h3><ul>
-<li>We can read a lot of information from the decomposition of $\mathbf{A}$<ul>
+<li>We can read a lot of information from the decomposition of $\mathbf{A}$</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the sum of the eigenvalues equals the trace of $\mathbf{A}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the product of the eigenvalues equals the determinant of $\mathbf{A}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$\mathbf{A}$ is singular iff any eigenvalues are zero</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>A matrix whose eigenvalues are all:<ul>
 <li>positive is <em>positive definite</em></li>
 <li>positive or zero is <em>positive semidefinite</em></li>
@@ -13776,13 +14669,10 @@ TwAAAABJRU5ErkJggg==
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 
 </div>
 </div>
-</div><aside class="notes">
-
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13794,36 +14684,79 @@ TwAAAABJRU5ErkJggg==
 
 </div>
 </div>
-</div>
-</aside></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="an-important-application-in-Machine-Learning">an important application in Machine Learning<a class="anchor-link" href="#an-important-application-in-Machine-Learning">&#182;</a></h3><ul>
-<li>PCA is the eigendecomposition of a covariance matrix!<ul>
+<li>PCA is the eigendecomposition of a covariance matrix!</li>
 <li>see the explanation here: <a href="http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/">http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/</a></li>
-<li>eigenvector with largest eigenvalue points into direction of largest variance in the data</li>
-<li>next (largest) eigenvector is orthogonal and points into second largest direction</li>
-<li>and so on...</li>
 </ul>
-</li>
-</ul>
-<p><img src="http://www.visiondummy.com/wp-content/uploads/2014/04/eigenvectors_covariance.png" alt="example from visiondummy.com"></p>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The covariance matrix corresponds to a linear transformation (rotation and scaling) of white, uncorrelated data (just as the example above with the transformed unit circle)<ul>
-<li>eigendecompositions gives the eigenvector matrix (rotation) and the eigenvalue matrix (scaling).</li>
-<li>from those we can read the directions of largest variations</li>
+<li>eigenvector with largest eigenvalue points into direction of largest variance in the data</li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>next (largest) eigenvector is orthogonal and points into second largest direction</li>
+<li>and so on...</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://www.visiondummy.com/wp-content/uploads/2014/04/eigenvectors_covariance.png" alt="example from visiondummy.com"></p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The covariance matrix corresponds to a linear transformation (rotation and scaling) of white, uncorrelated data (just as the example above with the transformed unit circle)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>eigendecompositions gives the eigenvector matrix (rotation) and the eigenvalue matrix (scaling).</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>from those we can read the directions of largest variations</li>
 </ul>
 
 </div>
@@ -13842,55 +14775,139 @@ TwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
 <li>$ \mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ says that the eigenvectors keep the same direction when multiplied by A</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the sum of the eigenvalues equals the trace of $\mathbf{A}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the product of the eigenvalues equals the determinant of $\mathbf{A}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>eigenvalues determine if $\mathbf{A}$ is positive(negative) (semi) definite</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">&#182;</a></h2><ul>
-<li>SVD provides another way to factorize a matrix, into singular values and singular vectors.<ul>
+<li>SVD provides another way to factorize a matrix, into singular values and singular vectors.</li>
 <li>similar to eigendecomposition but more generally applicable:<ul>
 <li>every real matrix has a singular value decomposition</li>
 <li>e.g. non-square matrices</li>
-</ul>
-</li>
-<li>the eigendecomposition was defined as $$\mathbf{A} = \mathbf{V} diag(\mathbf{\lambda})\mathbf{V}^{-1}$$</li>
-<li>the SVD now is: $$\mathbf{A} = \mathbf{U} \mathbf{D}\mathbf{V}^{\top}$$<ul>
-<li>if $\mathbf{A}$ is $m \times n$ then $\mathbf{U}$ is $m \times m$, $\mathbf{D}$ is $m \times n$ and $\mathbf{V}$ is $n \times n$</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$$\mathbf{A} = \mathbf{U} \mathbf{D}\mathbf{V}^{\top}$$</p>
 <ul>
-<li>each matrix has a special structure: <ul>
+<li>the eigendecomposition was defined as $\mathbf{A} = \mathbf{V} diag(\mathbf{\lambda})\mathbf{V}^{-1}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the SVD now is: $\mathbf{A} = \mathbf{U} \mathbf{D}\mathbf{V}^{\top}$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>if $\mathbf{A}$ is $m \times n$ then $\mathbf{U}$ is $m \times m$, $\mathbf{D}$ is $m \times n$ and $\mathbf{V}$ is $n \times n$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$\mathbf{A} = \mathbf{U} \mathbf{D}\mathbf{V}^{\top}$</li>
+<li>each matrix has a special structure: </li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$\mathbf{U}$ and $\mathbf{V}$ are orthogonal, the columns of $\mathbf{U}$ are the <em>left-singular vectors</em> and the columns of $\mathbf{V}$ are the <em>right-singular vectors</em></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$\mathbf{D}$ is diagonal, elements along diagonal are the <em>singular values</em> </li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>the connection between SVD and eigendecomposition:<ul>
 <li>the left-singular vectors are the eigenvectors of $\mathbf{A}\mathbf{A}^\top$</li>
 <li>the right-singular vectors are the eigenvectors of $\mathbf{A}^\top\mathbf{A}$</li>
@@ -13901,48 +14918,125 @@ TwAAAABJRU5ErkJggg==
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Key-Ideas">Key Ideas<a class="anchor-link" href="#Key-Ideas">&#182;</a></h3><ul>
 <li>SVD factors $\mathbf{A}$ into  $\mathbf{U} \mathbf{D}\mathbf{V}^{\top}$</li>
-<li>the squared singular values are the nonzero eigenvalues of $\mathbf{A}^\top\mathbf{A}$ and $\mathbf{A}\mathbf{A}^\top$</li>
-<li>the orthonormal columns of $\mathbf{U}$ and $\mathbf{V}$ are the eigenvectors of $\mathbf{A}\mathbf{A}^\top$ and $\mathbf{A}^\top\mathbf{A}$</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Moore-Penrose-Pseudoinverse">The Moore-Penrose Pseudoinverse<a class="anchor-link" href="#The-Moore-Penrose-Pseudoinverse">&#182;</a></h2><ul>
-<li>inversion not defined for matrices that are not square<ul>
-<li>if $\mathbf{A}$ is taller than wide, we might not get a solution (more equations than unkowns)</li>
-<li>if $\mathbf{A}$ is wider than tall, there could be multiple solutions (more unkowns than equations).</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>This is where we need the Moore-Penrose pseudoinverse to get one (principle) solution: <ul>
+<li>$\mathbf{A}$ doen't need to be square</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the squared singular values are the nonzero eigenvalues of $\mathbf{A}^\top\mathbf{A}$ and $\mathbf{A}\mathbf{A}^\top$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>the orthonormal columns of $\mathbf{U}$ and $\mathbf{V}$ are the eigenvectors of $\mathbf{A}\mathbf{A}^\top$ and $\mathbf{A}^\top\mathbf{A}$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Moore-Penrose-Pseudoinverse">The Moore-Penrose Pseudoinverse<a class="anchor-link" href="#The-Moore-Penrose-Pseudoinverse">&#182;</a></h2><ul>
+<li>matrix inversion not defined for matrices that are not square:</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>if $\mathbf{A}$ is taller than wide, we might not get a solution (more equations than unkowns)</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>if $\mathbf{A}$ is wider than tall, there could be multiple solutions (more unkowns than equations).</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>This is where we need the Moore-Penrose pseudoinverse to get one (principle) solution: </li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>$ \mathbf{A}^{+} = \lim_{\alpha \to 0}(\mathbf{A}^\top\mathbf{A} + \alpha \mathbf{I})^{-1}\mathbf{A}^\top $</li>
 </ul>
-</li>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>If A is wider than tall (<em>more unkowns than equations</em>):<ul>
 <li>we get the solution with minimal Euclidean norm among all possible solutions.</li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>If A is taller than wide (<em>more equations than unkowns</em>) and there is no solution:<ul>
 <li>we get the least squares solution $\mathbf{x}$, i.e. $\mathbf{A}\mathbf{x}$ is as close as possible to $\mathbf{y}$ in terms of Euclidean norm.)</li>
 </ul>
@@ -13964,27 +15058,62 @@ TwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-</aside></section></section><section><section>
+</aside></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Trace-Operator">The Trace Operator<a class="anchor-link" href="#The-Trace-Operator">&#182;</a></h2><ul>
-<li>gives the sum of the diagonal elements: $$Tr(\mathbf{A})=\sum_{i}A_{i,i} $$<ul>
+<li>gives the sum of the diagonal elements: $Tr(\mathbf{A})=\sum_{i}A_{i,i} $</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>remember: it is the sum of the eigenvalues</li>
-<li>some operations are difficult to specify without summation notation can be written in matrix products and trace operations:<ul>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>some operations are difficult to specify without summation notation can be written in matrix products and trace operations:</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>e.g. $\lVert \mathbf{A} \rVert = \sqrt{Tr(\mathbf{A}\mathbf{A}^\top)} $</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>trace is invariant to transposition $Tr(\mathbf{A})=Tr(\mathbf{A}^\top)$ </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
 
 </div>
 </div>
-</div><aside class="notes">
-
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13992,56 +15121,71 @@ TwAAAABJRU5ErkJggg==
 <ul>
 <li>$Tr(\mathbf{A}\mathbf{B}\mathbf{C})=Tr(\mathbf{C}\mathbf{A}\mathbf{B})=Tr(\mathbf{B}\mathbf{C}\mathbf{A})$<ul>
 <li>invariant to cyclic permutations</li>
-<li>a scalar is its own trace $a = Tr(a)$</li>
 </ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div>
-</aside></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Determinant">The Determinant<a class="anchor-link" href="#The-Determinant">&#182;</a></h2><ul>
-<li>the determinant of a square matrix $\det(A)$ is a function (from matrices to real scalars)<ul>
-<li>remember: it is equal to the product of eigenvalues</li>
-</ul>
-</li>
-<li>absolute value of determinant measures how multiplication with $\mathbf{A}$ expands or contracts space<ul>
-<li>if it is 1 , the transformation is volume preserving<ul>
-<li>e.g. interesting for evaluating deformation fields in registrations</li>
-</ul>
-</li>
-<li>if it is 0, all space is contracted (at least in one dimension).</li>
-</ul>
-</li>
+<li>the determinant of a square matrix $\det(A)$ is a function from matrices to real scalars</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="a-final-note:-Tensors">a final note: Tensors<a class="anchor-link" href="#a-final-note:-Tensors">&#182;</a></h2><ul>
-<li>a 'generalization' of scalars, vectors, matrices: <ul>
-<li>an array of numbers arranged in a grid with variable number of axis </li>
-</ul>
-</li>
-<li>e.g. $A_{i,j,k}$ <ul>
-<li>would need <em>three</em> indices per entry</li>
-</ul>
-</li>
-<li>this is oversimplified: see <a href="https://en.wikipedia.org/wiki/Tensor">https://en.wikipedia.org/wiki/Tensor</a></li>
+<ul>
+<li>absolute value of determinant measures how multiplication with $\mathbf{A}$ expands or contracts space</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>if it is 1 , the transformation is volume preserving<ul>
+<li>e.g. interesting for evaluating deformation fields in registrations</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>if it is 0, all space is contracted (at least in one dimension).</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>remember: it is equal to the product of eigenvalues</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
